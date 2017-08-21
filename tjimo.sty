@@ -1,0 +1,107 @@
+\ProvidesPackage{tjimo}
+
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{float}
+%\usepackage{tikz}
+
+%my inputs
+\usepackage{framed}
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+%\makeatother
+%Small commands
+
+\newcommand{\hrulebar}{
+  \par\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+
+%For use in author command
+\newcommand{\plusemail}[1]{\\ \normalfont \texttt{\mailto{#1}}}
+
+%Convenient Environments
+\newenvironment{soln}{\begin{proof}[Solution]}{\end{proof}}
+
+%Asy commands
+%
+\begin{comment}
+\usepackage{asymptote}
+\begin{asydef}
+	import olympiad;
+	import cse5;
+	pointpen = black;
+	pathpen = black;
+	pathfontpen = black;
+	anglepen = black;
+	anglefontpen = black;
+	pointfontsize = 9;
+	defaultpen(fontsize(9pt));
+	size(6cm); // set a reasonable default
+	usepackage("amsmath");
+	usepackage("amssymb");
+\end{asydef}
+\end{comment}
+%
+
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{problems}{Problem}
+\newtheorem*{solutions}{Solution}
+\newtheorem*{answer}{Answer}
+\newtheorem*{solutionone}{Solution 1}
+\newtheorem*{solutiontwo}{Solution 2}
+
+\newenvironment{problem}{\begin{problems}}{\newline \end{problems}} 
+\newenvironment{solution}{\begin{solutions}}{\newline \end{solutions}}
+
+\pagestyle{fancy}
+\cfoot{}
+\lhead{\logo}
+\rhead{\righthead\vspace{-1em}}
+\rfoot{\emph{\sevenpoints}}
+\setlength{\headheight}{11em} %previously 16em
+\setlength{\headsep}{2em}
+\setlength{\voffset}{-1in}
+\setlength{\hoffset}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\textheight}{0.25in}
+\newlength\FHoffset\setlength\FHoffset{0.5in}
+\addtolength\headwidth{2\FHoffset}
+\fancyheadoffset{\FHoffset}
+\newlength\FHleft\setlength\FHleft{0in}
+\newlength\FHright\setlength\FHright{-1in}
+\newbox\FHline\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+%\newcommand{\olyinfo}[1]{\begin{flushright} \itshape #1 \end{flushright}\medskip}
+%\newcommand{\nmbox}[1]{\fbox{\sffamily\LARGE\vphantom y#1} \par\vspace{1em}} % normal box
+\newcommand{\fdbox}[2]{\fbox{\sffamily\LARGE\vphantom y#1: \bfseries #2} \par\vspace{1em}} % field box
+
+\newcommand{\logo}{%
+\begin{minipage}[b]{22em}
+\centering\noindent
+%{\huge\sffamily Intermediate Math Open}
+\\[0.5em]
+\begin{minipage}[t][4em][t]{12em} \centering
+{\huge \bfseries ${\bf 28^{\text{th}}}$ TJIMO } \\
+\textsc{\large Alexandria, Virginia}
+\end{minipage}
+\end{minipage}
+\vspace*{-0.05em}
+}
+
+\endinput
