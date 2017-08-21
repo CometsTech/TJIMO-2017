@@ -19,6 +19,8 @@ At the beginning of each round, please call
 
 \usepackage{../tjimo}
 
+You do not need to separate answers and solutions from the problems file. Put everything in one .tex file. Observe lines 8-13 in individual.tex. When compiled with those lines, the result is the solutions pdf. Comment lines 8 and 13 to get the pdf with problems only.
+
 Old Repository for Reference
 ---
 https://github.com/aadityasingh/TJIMO-2016
