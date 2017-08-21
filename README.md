@@ -9,7 +9,7 @@ Do NOT make this repository public until the date of the competition.
 
 Usage
 ---
-Access the GitHub repository at the link below.
+Access the GitHub repository: https://github.com/CometsTech/TJIMO-2017.git
 
 Please add all of your packages and macros to tjimo.sty; for each round,
 please make a folder in which you add your .tex files. Keep the practice
@@ -19,6 +19,6 @@ At the beginning of each round, please call
 
 \usepackage{../tjimo}
 
-GitHub Repository for Reference
+Old Repository for Reference
 ---
-https://github.com/ubuntor/TJIMO-2016.git
+https://github.com/aadityasingh/TJIMO-2016
