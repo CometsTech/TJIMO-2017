@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{subfig}
+\usepackage{../tjimo}
+
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Practice Power}}
+
+\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\end{comment}
+
+\renewenvironment{problem}{\begin{problems}}{\end{problems}\vspace{5pt}}
+
+\begin{document}
+
+%\setlength{\belowcaptionskip}{-50pt}
+\setlength{\parindent}{0pt}
+
+\section{Introduction}
+
+Unlike the other rounds, just getting the answer right is not enough on the Power Round. 
+Make sure you explain your answer and use words to describe how you arrived at your answer. 
+In the words of middle school math teachers across the nation -- no work, no credit! \newline
+
+Feel free to use results from previous problems on this round to prove a later problem 
+(that is, you can use Problem 2 to prove Problem 3, but not vice versa). 
+You do not need to have solved the earlier problem to cite its result.
+
+\section{Basics}
+
+\begin{definition}
+An $n \times n$ \textit{magic square} is an $n \times n$ grid with integers in each cell such that
+the sum of the integers in any row, the sum of the integers in any column, and the sum of the integers
+in either of the two long diagonals are all equal. This sum is called the \textit{magic sum}.
+\end{definition}
+
+\begin{problem}[3=1+1+1 points]
+Determine whether each of the following is a magic square. If it is, determine the magic sum. If not, find two sums that are different.
+
+\begin{figure}[H]
+\centering
+\subfloat[]{
+\begin{tabular}{|c|c|}
+\hline
+1 & 4 \\ \hline
+2 & 3 \\ \hline
+\end{tabular}
+}
+\qquad
+\subfloat[]{
+\begin{tabular}{|c|c|}
+\hline
+17 & 17 \\ \hline
+17 & 17 \\ \hline
+\end{tabular}
+}
+\qquad
+\subfloat[]{
+\begin{tabular}{|c|c|c|}
+\hline
+4 & 2 & 9 \\ \hline
+3 & 7 & 5 \\ \hline
+8 & 6 & 1 \\ \hline
+\end{tabular} 
+}
+\end{figure}
+\end{problem}
+
+\begin{definition}
+A \textit{standard} $n \times n$ magic square is one that uses the integers from $1$ through $n^2$, inclusive, each once.
+\end{definition}
+
+\begin{problem}[4 points]
+Fill in the missing entries below (replicated on the answer sheet) so that the result is a standard $4 \times 4$ magic square.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+16 & 2 & 3 & 13 \\ \hline
+\phantom{5} & \phantom{11} & \phantom{10} & \phantom{8} \\ \hline
+\phantom{9} & 7 & 6 & \phantom{12} \\ \hline
+\phantom{4} & \phantom{14} & 15 & 1 \\ \hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\begin{problem}[5=1+1+1+2 points]
+This problem will guide you through computing the magic sum for a standard $3 \times 3$ magic square.
+
+\begin{enumerate}[label=(\alph*)]
+\item What are the nine numbers used for the entries of this standard $3 \times 3$ magic square?
+
+\item What is the sum of these $9$ numbers?
+
+\item Let the magic sum be $S$. Recall that this equals the sum of the entries in \textit{any} row. How many rows are there? 
+In terms of $S$, what is the sum of all these rows?
+
+\item Determine the value of $S$.
+\end{enumerate}
+\end{problem}
+
+This method is called \textit{double counting}, where you count the same thing in two different ways and equate them.
+In this case, you calculated the sum of all the entries in two different ways.
+
+\begin{problem}[3 points]
+Determine the magic sum for a standard $4 \times 4$ magic square.
+\end{problem}
+
+
+\section{$2 \times 2$ Magic Squares}
+
+\begin{problem}[6=2+2+2 points]
+In this problem, you will try to construct a standard $2 \times 2$ magic square.
+\begin{enumerate}[label=(\alph*)]
+\item Suppose such a square existed. What would be its magic sum?
+
+\item List all the ways you can add two numbers from the set $\{1, 2, 3, 4\}$ to get the magic sum.
+
+\item Fill in the entries for a standard $2 \times 2$ magic square, or explain why this is impossible.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[4 points]
+Consider the partially-completed $2 \times 2$ \textit{non-standard} magic square.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+17 & \phantom{17} \\ \hline
+ & \\ \hline
+\end{tabular}
+\end{center}
+Justify each step and explain why your solution is the only possible one.
+\end{problem}
+
+\begin{problem}[4 points]
+Find all possible $2 \times 2$ magic squares with integer entires. The one above should be included.
+\end{problem}
+
+\section{Magic Rectangles}
+
+\begin{definition}
+An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and intgers in each cell such that
+the sum of the integers in each row is the same, and the sum of the integers in each column is the same,
+but these two sums do not necessarily have to be the same.
+The first is called the \textit{row sum} and the second is called the \textit{column sum}.
+\end{definition}
+
+\end{document}

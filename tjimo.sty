@@ -56,15 +56,15 @@
 \newtheorem{theorem}{Theorem}
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}
+\newtheorem*{definition}{Definition}
 \newtheorem{problems}{Problem}
 \newtheorem*{solutions}{Solution}
 \newtheorem*{answer}{Answer}
 \newtheorem*{solutionone}{Solution 1}
 \newtheorem*{solutiontwo}{Solution 2}
 
-\newenvironment{problem}{\begin{problems}}{\newline \end{problems}} 
-\newenvironment{solution}{\begin{solutions}}{\newline \end{solutions}}
+\newenvironment{problem}{\begin{problems}}{\leavevmode\newline \end{problems}} 
+\newenvironment{solution}{\begin{solutions}}{\leavevmode\newline \end{solutions}}
 
 \pagestyle{fancy}
 \cfoot{}
