@@ -19,8 +19,6 @@
 %\setlength{\belowcaptionskip}{-50pt}
 \setlength{\parindent}{0pt}
 
-\section{Introduction}
-
 Unlike the other rounds, just getting the answer right is not enough on the Power Round. 
 Make sure you explain your answer and use words to describe how you arrived at your answer. 
 In the words of middle school math teachers across the nation -- no work, no credit! \newline
@@ -29,7 +27,7 @@ Feel free to use results from previous problems on this round to prove a later p
 (that is, you can use Problem 2 to prove Problem 3, but not vice versa). 
 You do not need to have solved the earlier problem to cite its result.
 
-\section{Basics}
+\section{Introduction}
 
 \begin{definition}
 An $n \times n$ \textit{magic square} is an $n \times n$ grid with integers in each cell such that
@@ -49,7 +47,7 @@ Determine whether each of the following is a magic square. If it is, determine t
 2 & 3 \\ \hline
 \end{tabular}
 }
-\qquad
+\qquad \qquad
 \subfloat[]{
 \begin{tabular}{|c|c|}
 \hline
@@ -57,7 +55,7 @@ Determine whether each of the following is a magic square. If it is, determine t
 17 & 17 \\ \hline
 \end{tabular}
 }
-\qquad
+\qquad \qquad
 \subfloat[]{
 \begin{tabular}{|c|c|c|}
 \hline
@@ -148,8 +146,34 @@ but these two sums do not necessarily have to be the same.
 The first is called the \textit{row sum} and the second is called the \textit{column sum}.
 \end{definition}
 
-\begin{problem}[3 points]
-Show that any magic rectangle whose row sum equals the column sum must, in fact, be a magic square.
+\setcounter{subfigure}{0}
+\begin{problem}[4=2+2 points]
+Determine whether each of the following is a magic rectangle. If it is, determine the row sum and column sum.
+If not, find two rows or two columns with differnet sums.
+\begin{figure}[H]
+\centering
+\subfloat[]{
+\begin{tabular}{|c|c|}
+\hline
+1 & 6 \\ \hline
+5 & 2 \\ \hline
+3 & 4 \\ \hline
+\end{tabular}
+} \qquad \qquad
+\subfloat[]{
+\begin{tabular}{|c|c|c|}
+\hline
+4 & 2 & 9 \\ \hline
+3 & 7 & 5 \\ \hline
+8 & 6 & 1 \\ \hline
+\end{tabular}
+}
+\end{figure}
+\end{problem}
+
+\begin{problem}[4 points]
+Show that any magic rectangle whose row sum equals the column sum must, in fact, be in the shape of a square
+(so $m = n$ in the definition). Does it have to be a magic square?
 \end{problem}
 
 \end{document}
