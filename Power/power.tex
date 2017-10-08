@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{subfig}
+\usepackage{../tjimo}
+
+\newcommand{\sevenpoints}{Time limit: 45 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Power}}
+
+\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\end{comment}
+
+\renewenvironment{problem}{\begin{problems}}{\end{problems}\vspace{5pt}}
+
+\begin{document}
+
+%\setlength{\belowcaptionskip}{-50pt}
+\setlength{\parindent}{0pt}
+
+\section{Introduction}
+
+Unlike the other rounds, just getting the answer right is not enough on the Power Round. 
+Make sure you explain your answer and use words to describe how you arrived at your answer. 
+In the words of middle school math teachers across the nation -- no work, no credit! \newline
+
+Feel free to use results from previous problems on this round to prove a later problem 
+(that is, you can use Problem 2 to prove Problem 3, but not vice versa). 
+You do not need to have solved the earlier problem to cite its result.
+You may also use results from the morning's Practice Power Round.
+
+\section{Review}
+
+\begin{definition}
+An $n \times n$ \textit{magic square} is an $n \times n$ grid with integers in each cell such that
+the sum of the integers in any row, the sum of the integers in any column, and the sum of the integers
+in either of the two long diagonals are all equal. This sum is called the \textit{magic sum}.
+\end{definition}
+
+\begin{definition}
+A \textit{standard} $n \times n$ magic square is one that uses the integers from $1$ through $n^2$, inclusive, each once.
+\end{definition}
+
+\begin{problem}[1 point]
+Determine all $1 \times 1$ standard magic squares.
+\end{problem}
+
+\begin{problem}[5 points]
+Determine the magic sum for an $n \times n$ magic square, where $n$ is any positive intger.
+(Hint: You may find the formula $1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}$ useful.)
+What does your formula give for the magic sum for each of $n = 1, 2, 3, 4$?
+Are these consistent with what you found this morning?
+(If not, go back and check your work for your formula.)
+Is your expression always guaranteed to be an integer? Why or why not?
+\end{problem}
+
+
+\section{$3 \times 3$ Magic Squares}
+
+\begin{problem}[3 points]
+Fill in the missing entries below to make a magic square, or prove that it is impossible to do so.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+20 & \phantom{00} & \phantom{00} \\ \hline
+ & 17 & \\ \hline
+ 10 & 28 & \\ \hline
+\end{tabular}
+\end{center}
+\end{problem}
+
+\begin{problem}[15=1+3+2+3+3+3 points]
+In this problem, you will construct a standard $3 \times 3$ magic square.
+\begin{enumerate}[label=(\alph*)]
+\item What is the magic sum?
+
+\item List all the ways you can add three distinct numbers from the set $\{1, 2, 3, 4, 5, 6, 7, 8, 9\}$ to get the magic sum.
+(Order doesn't matter here, so $4+5+6$ is the same as $5+6+4$.)
+
+\item How many rows, columns, and diagonals are there? How many ways did you find in part (b)?
+These two numbers should be the same. What does that mean?
+
+\item Which number has to go in the center? Why?
+
+\item Which numbers have to go in the corners? Why?
+
+\item Draw a complete, standard $3 \times 3$ magic square.
+
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[12=4+4+4 points]
+For each of the following, find a $3 \times 3$ magic square whose entries are the given numbers, or prove that it is impossible to do so.
+\begin{enumerate}[label=(\alph*)]
+\item 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+\item 2, 4, 6, 8, 10, 12, 14, 16, 18
+
+\item 1, 3, 4, 5, 6, 7, 8, 9, 10
+\end{enumerate}
+\end{problem}
+
+\section{Magic Rectangles}
+
+\begin{definition}
+An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and intgers in each cell such that
+the sum of the integers in each row is the same, and the sum of the integers in each column is the same,
+but these two sums do not necessarily have to be the same.
+The first is called the \textit{row sum} and the second is called the \textit{column sum}.
+\end{definition}
+
+\begin{definition}
+A \textit{standard} $m \times n$ magic rectangle is one that uses the integers from $1$ through $m\times n$, inclusive, each once.
+\end{definition}
+
+\begin{problem}[8=2+2+4 points]
+In this problem, you will construct a standard $4 \times 2$ magic rectangle.
+\begin{enumerate}[label=(\alph*)]
+\item Using the sum of the entries, determine the row sum and the column sum.
+
+\item List all the ways you can add two of the possible numbers to obtain the row sum.
+
+\item Draw a completed standard $4 \times 2$ magic rectangle.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[8=4+4 points]
+For each of the following, find a standard magic rectangle with the given dimensions or prove that it is impossible to do so.
+\begin{enumerate}[label=(\alph*)]
+\item $8 \times 2$
+
+\item $8 \times 3$
+\end{enumerate}
+\end{problem}
+
+\begin{problem}[6 points]
+Show that it is impossible to construct a standard $m \times n$ rectangle if $m+n$ is odd.
+\end{problem}
+
+\end{document}
