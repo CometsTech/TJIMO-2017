@@ -30,7 +30,7 @@ You do not need to have solved the earlier problem to cite its result.
 \section{Introduction}
 
 \begin{definition}
-An $n \times n$ \textit{magic square} is an $n \times n$ grid with integers in each cell such that
+An $n \times n$ \textit{magic square} is an $n \times n$ grid with positive integers in each cell such that
 the sum of the integers in any row, the sum of the integers in any column, and the sum of the integers
 in either of the two long diagonals are all equal. This sum is called the \textit{magic sum}.
 \end{definition}
@@ -67,6 +67,18 @@ Determine whether each of the following is a magic square. If it is, determine t
 \end{figure}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item $\boxed{\text{No}}$, the first column sums to $1+2 = 3$ while the second column sums to $4+3 = 7$.
+
+\item $\boxed{\text{Yes}}$, all rows, columns, and diagonals sum to $17+17=34$.
+
+\item $\boxed{\text{No}}$, the diagonal from the top left to bottom right sums to $4+7+1=12$, while the diagonal from the
+top right to bottom left sums to $9+7+8=24$.
+\end{enumerate}
+\end{solution}
+
+
 \begin{definition}
 A \textit{standard} $n \times n$ magic square is one that uses the integers from $1$ through $n^2$, inclusive, each once.
 \end{definition}
@@ -85,6 +97,50 @@ Fill in the missing entries below (replicated on the answer sheet) so that the r
 \end{center}
 \end{problem}
 
+\begin{solution}
+The first row is already completed, so the magic sum is $16 + 2 + 3 + 13 = 34$.
+Now we use the magic sum to fill in the missing entries one by one in rows, columns, or diagonals with three entries.
+
+Using the long diagonal, the entry in the second row and second column must be $34-16-6-1=11$.
+
+Using the second column, then the entry in the fourth row and second column must be $34-2-11-7=14$.
+
+Using the last row, the entry in the last row and first column must be $34-14-15-1=4$.
+
+Using the other long diagonal, the entry in the second row and third column must be $34-13-7-4=10$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+16 & 2 & 3 & 13 \\ \hline
+\phantom{5} & 11 & 10 & \phantom{8} \\ \hline
+\phantom{9} & 7 & 6 & \phantom{12} \\ \hline
+4 & 14 & 15 & 1 \\ \hline
+\end{tabular}
+\end{center}
+
+At this point, since this is a standard magic square, we are left with the numbers $5$, $8$, $9$, and $12$ 
+to fill in the second and third row entries in the first and last columns. The sum of the two entries
+in the second row is $11+10 = 21$, so it needs $34-21 = 13$ more, and the only way to make $13$ out of
+the possible remaining numbers is $5+8$, so the two missing entries must be $5$ and $8$, in some order.
+Similarly, in the first column, the sum of the two current entries is $16+4=20$, so it needs $34-20=14$
+more, and the only way to make $14$ is with $9+5$. Hence the entry in the second row and first column
+must be $5$, the common number between our analyses above. From here, it is easy to see that the entry in
+the third row and first column must be $9$, the entry in the second row and last column must be $8$,
+and the entry in the third row and last column must be $12$, giving the completed magic square below.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+16 & 2 & 3 & 13 \\ \hline
+5 & 11 & 10 & 8 \\ \hline
+9 & 7 & 6 & 12 \\ \hline
+4 & 14 & 15 & 1 \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+
+
 \begin{problem}[5=1+1+1+2 points]
 This problem will guide you through computing the magic sum for a standard $3 \times 3$ magic square.
 
@@ -100,6 +156,19 @@ In terms of $S$, what is the sum of all these rows?
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item The nine numbers used for the standard $3 \times 3$ magic square are $\boxed{1,2,3,4,5,6,7,8, \text{and } 9}$.
+
+\item The sum of these nine numbers is $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = \boxed{45}$.
+
+\item There are $3$ rows, so the sum of all the entries equals the sum of three rows, which is $\boxed{3S}$.
+
+\item Since $3S = 45$, we have $S = \frac{45}{3} = \boxed{15}$.
+\end{enumerate}
+\end{solution}
+
+
 This method is called \textit{double counting}, where you count the same thing in two different ways and equate them.
 In this case, you calculated the sum of all the entries in two different ways.
 
@@ -107,6 +176,12 @@ In this case, you calculated the sum of all the entries in two different ways.
 Determine the magic sum for a standard $4 \times 4$ magic square.
 \end{problem}
 
+
+\begin{solution}
+We use the same approach as before. The sum of the entires of a standard $4 \times 4$ magic square is
+$1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16 = 136$. There are $4$ rows, so if the sum of each row is $S$,
+then the sum of all entries also equals the sum of four rows, or $4S$. Then $4S = 136$, so $S = \frac{136}{4} = \boxed{34}$.
+\end{solution}
 
 \section{$2 \times 2$ Magic Squares}
 
@@ -121,6 +196,21 @@ In this problem, you will try to construct a standard $2 \times 2$ magic square.
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item Again, we use the above approach of double counting. The sum of the four entires is $1+2+3+4=10$, and 
+there are $2$ rows, so the sum for each row would be $\frac{10}{2} = \boxed{5}$, which must be the magic sum.
+
+\item The only possible ways to sum two distinct numbers from the set $\{1, 2, 3, 4\}$ to get $5$ are
+$\boxed{1+4}$ and $\boxed{2+3}$, up to order.
+
+\item There are $2$ rows, $2$ columns, and $2$ diagonals, none of which use the same two numbers, so we
+need at least $6$ distinct ways to sum two numbers from the set $\{1, 2, 3, 4\}$ to get $5$. However,
+there are only $2$ such ways, so this is impossible.
+\end{enumerate}
+\end{solution}
+
+
 \begin{problem}[4 points]
 Consider the partially-completed $2 \times 2$ \textit{non-standard} magic square.
 \begin{center}
@@ -133,14 +223,45 @@ Consider the partially-completed $2 \times 2$ \textit{non-standard} magic square
 Fill in the missing entries, justifying each step and explaining why your solution is the only possible one.
 \end{problem}
 
+\begin{solution}
+Let the upper-right entry be $x$. Then the lower-left and lower-right entries must also be $x$ in order
+to make the magic sum $17+x$. Using the right column, the magic sum is also $x+x$, so we must have
+$17+x = x+x$, or $x = 17$. Hence the only way to fill in the missing entries is to make all of them $17$.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+17 & 17 \\ \hline
+17 & 17 \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+
 \begin{problem}[4 points]
-Find all possible $2 \times 2$ magic squares with integer entires. The one above should be included.
+Find all possible $2 \times 2$ magic squares with positive integer entires. The one above should be included.
 \end{problem}
+
+\begin{solution}
+We use similar logic to the preivous problem. Suppose the top-left entry is $y$. 
+Now suppose the top-right entry is $x$. Then the bottom-left and bottom-right entries must also be $x$.
+Using the right column, the magic sum is also $x+x$, so $y+x = x+x$, or $y = x$.
+Thus all entries in the magic square are the same.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$x$ & $x$ \\ \hline
+$x$ & $x$ \\ \hline
+\end{tabular}
+\end{center}
+
+In other words, all possible $2 \times 2$ magic squares are those whose entries are all the same positive integer.
+\end{solution}
 
 \section{Magic Rectangles}
 
 \begin{definition}
-An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and intgers in each cell such that
+An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and positive integers in each cell such that
 the sum of the integers in each row is the same, and the sum of the integers in each column is the same,
 but these two sums do not necessarily have to be the same.
 The first is called the \textit{row sum} and the second is called the \textit{column sum}.
@@ -171,9 +292,30 @@ If not, find two rows or two columns with differnet sums.
 \end{figure}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item $\boxed{\text{No}}$, the sum of the entries in the first column is $1+5+3=9$, while
+the sum of the entries in the second column is $6+2+4 = 12$, which is different.
+
+\item $\boxed{\text{Yes}}$, the row sum is $15$ and the column sum is $15$. Of course, the row sum
+and column sum do not always have to be the same; it just happened to be the same in this case.
+Also note that diagonals do not matter in the case of magic rectangles.
+\end{enumerate}
+\end{solution}
+
+
 \begin{problem}[4 points]
 Show that any magic rectangle whose row sum equals the column sum must, in fact, be in the shape of a square
 (so $m = n$ in the definition). Does it have to be a magic square?
 \end{problem}
+
+\begin{solution}
+Let the row sum and column sum both be $S$, and suppose the dimensions of the magic rectangle are $m \times n$. 
+Once again, we use the approach of double counting.  The sum of the entries is the same no matter how we count this sum.
+There are $m$ rows, so on the one hand the sum is $mS$. There are $n$ rows, so on the other hand the sum is $nS$.
+Hence $mS = nS$, and since all entires are positive integers, $S \ne 0$, so $m = n$, as desired.
+Although we have concluded that the magic rectangle is in the shape of a square, it need not be a magic
+square since the diagonal sums do not have to be equal to this sum, as seen by the example in the previous problem.  
+\end{solution}
 
 \end{document}
