@@ -37,7 +37,7 @@ It might be wise to split up your team after finishing section 1, with one half 
 \section{Review}
 
 \begin{definition}
-An $n \times n$ \textit{magic square} is an $n \times n$ grid with integers in each cell such that
+An $n \times n$ \textit{magic square} is an $n \times n$ grid with positive integers in each cell such that
 the sum of the integers in any row, the sum of the integers in any column, and the sum of the integers
 in either of the two long diagonals are all equal. This sum is called the \textit{magic sum}.
 \end{definition}
@@ -47,17 +47,50 @@ A \textit{standard} $n \times n$ magic square is one that uses the integers from
 \end{definition}
 
 \begin{problem}[1 point]
-Determine all $1 \times 1$ standard magic squares.
+Determine all standard $1 \times 1$ magic squares.
 \end{problem}
 
-\begin{problem}[5 points]
-Determine the magic sum for an $n \times n$ magic square, where $n$ is any positive intger.
+\begin{solution}
+By definition, a standard $1 \times 1$ magic square is a $1 \times 1$ grid that uses the number $1$.
+Obviously, there is only one possible such magic square.
+\begin{center}
+\begin{tabular}{|c|}
+\hline
+1 \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+
+\begin{problem}[5=3+1+1 points]
+In this problemm, you will consider the magic sum for an arbitrary standard magic square.
+\begin{enumerate}[label=(\alph*)]
+\item Determine the magic sum for an $n \times n$ magic square, where $n$ is any positive intger.
 (Hint: You may find the formula $1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}$ useful.)
-What does your formula give for the magic sum for each of $n = 1, 2, 3, 4$?
+
+\item What does your formula give for the magic sum for each of $n = 1, 2, 3, 4$?
 Are these consistent with what you found this morning?
 (If not, go back and check your work for your formula.)
-Is your expression always guaranteed to be an integer? Why or why not?
+
+\item Is your expression always guaranteed to be an integer? Why or why not? (Hint: Consider when $n$ is odd
+or even.)
+\end{enumerate}
 \end{problem}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item We use the same double counting approach from the Practice Power Round. The entries for a standard
+$n \times n$ magic square are the integers from $1$ through $n^2$, inclusive, the sum of which is
+$1 + 2 + \cdots + n^2 = \frac{n^2(n^2+1)}{2}$. (Here, we substituted $n^2$ for $k$ in the hint's formula.)
+Suppose the magic sum is $S$. Then the sum of the entries is also the sum of the $n$ rows, which is $nS$.
+Hence $nS = \frac{n^2(n^2+1)}{2}$, so $S = \boxed{\frac{n(n^2+1)}{2}}$.
+
+\item This gives a magic sum of $\frac{1(2)}{2} = 1$ for $n = 1$, $\frac{2}{5}{2} = 5$ for $n = 2$,
+$\frac{3}{10}{2} = 15$ for $n = 3$, and $\frac{4(17)}{2} = 34$ for $n = 4$, all of which are consistent
+with those from the Practice Power Round.
+
+\item $\boxed{\text{Yes}}$, $n$ and $n^2+1$ have different parity, so at least one of them will be divisible by $2$.
+\end{enumerate}
+\end{solution}
 
 
 \section{$3 \times 3$ Magic Squares}
@@ -73,6 +106,13 @@ Fill in the missing entries below to make a magic square, or prove that it is im
 \end{tabular}
 \end{center}
 \end{problem}
+
+\begin{solution}
+Suppose the bottom-right entry (last row and last column) is $x$. Then the diagonal sum is $20+17+x = 37+x$,
+but the sum of the entries in the last row is $10+28+x = 38+x$. The fact that the magic sum is the same
+requires $37+x = 38+x$, or $0 = 1$, which is impossible.
+\end{solution}
+
 
 \begin{problem}[15=1+3+2+3+3+3 points]
 In this problem, you will construct a standard $3 \times 3$ magic square.
@@ -90,9 +130,42 @@ These two numbers should be the same. What does that mean?
 \item Which numbers have to go in the corners? Why?
 
 \item Draw a complete, standard $3 \times 3$ magic square.
-
 \end{enumerate}
 \end{problem}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item As computed above, the magic sum is $\boxed{15}$.
+
+\item The possible ways to add three distinct numbers between $1$ and $9$, inclusive, to get $15$ are $1+5+9$, 
+$1+6+8$, $2+4+9$, $2+5+8$, $2+6+7$, $3+4+8$, $3+5+7$, and $4+5+6$.
+
+\item There are $3$ rows, $3$ columns, and $2$ diagonals. We found $\boxed{8}$ possible ways in part (b), which
+equals $3+3+2$. This is the minimum number of ways necessary for there to possibly exist a magic square.
+If a $3 \times 3$ standard magic square exists, it must use each of these ways exactly once.
+Recall from the Practice Power Round that it was impossible to construct a standard $2 \times 2$ magic square
+because there were only $2$ ways while a minimum of $6$ were needed.
+
+\item The center entry (second row, second column) is included in one row, one coulmn, and two diagonals.
+The only entry that occurs in $4$ of the $8$ possible ways to sum to $15$ is $\boxed{5}$ (in $1+5+9$, $2+5+8$,
+$3+5+7$, and $4+5+6$), so it must go in the middle.
+
+\item Each corner number occurs in one row, one column, and one diagonal, so it needs to occur in three sums.
+These numbers are $\boxed{2, 4, 6, \text{and } 8}$.
+
+\item The remaining odd numbers $1, 3, 5$, and $7$ must go along the four remaining edge squares.
+Using this, we can now construct a standard $3 \times 3$ magic square. One such example is shown below.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+8 & 1 & 6 \\ \hline
+3 & 5 & 7 \\ \hline
+4 & 9 & 2 \\ \hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{solution}
+
 
 \begin{problem}[12=4+4+4 points]
 For each of the following, find a $3 \times 3$ magic square whose entries are the given numbers, or prove that it is impossible to do so.
@@ -105,10 +178,40 @@ For each of the following, find a $3 \times 3$ magic square whose entries are th
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item The easiest way to do this is to take any standard $3 \times 3$ magic square and increase every entry by $1$.
+Using the example above gives the result below.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+9 & 2 & 7 \\ \hline
+4 & 6 & 8 \\ \hline
+5 & 10 & 3 \\ \hline
+\end{tabular}
+\end{center}
+
+\item Similar to part (a), in this case we multiply each element of the standard magic square by $2$.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+16 & 2 & 12 \\ \hline
+6 & 10 & 14 \\ \hline
+8 & 18 & 4 \\ \hline
+\end{tabular}
+\end{center}
+
+\item We will prove that no such magic square exists. The sum of the given entries is $1+3+4+5+6+7+8+9+10=53$.
+As we have seen many times, if the magic sum is $S$, then the sum of entires is $3S$. Then $3S = 53$, or 
+$S = \frac{53}{3}$, which is not an integer. But all entries are integers, so this is impossible!
+\end{enumerate}
+\end{solution}
+
+
 \section{Magic Rectangles}
 
 \begin{definition}
-An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and intgers in each cell such that
+An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and positive intgers in each cell such that
 the sum of the integers in each row is the same, and the sum of the integers in each column is the same,
 but these two sums do not necessarily have to be the same.
 The first is called the \textit{row sum} and the second is called the \textit{column sum}.
@@ -130,6 +233,23 @@ Fill in the missing entries below to make a standard magic rectangle, or prove t
 \end{center}
 \end{problem}
 
+\begin{solution}
+The third column is already completed, so the column sum is $8+1+15 = 24$. Then the missing entry in the
+fourht column must be $24-11-4=9$ and the missing entry in the first column must be $24-6-13=5$.
+At this point, we can either simply use logic with the remaining $4$ entries, which must be
+$2$, $3$, $7$, and $12$, in some order, since this is a standard magic rectangle, or we can compute
+the row sum via double counting, which turns out to be $40$. In either case, there is only one way to complete the magic rectangle.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+6 & 7 & 8 & 9 & 10 \\ \hline
+13 & 3 & 1 & 11 & 12 \\ \hline
+5 & 14 & 15 & 4 & 2 \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+
+
 \begin{problem}[8=2+2+4 points]
 In this problem, you will construct a standard $4 \times 2$ magic rectangle.
 \begin{enumerate}[label=(\alph*)]
@@ -137,17 +257,65 @@ In this problem, you will construct a standard $4 \times 2$ magic rectangle.
 
 \item List all the ways you can add two of the possible numbers to obtain the row sum.
 
-\item Draw a completed standard $4 \times 2$ magic rectangle.
+\item Draw a complete, standard $4 \times 2$ magic rectangle.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}[6 points]
-Determine the row sum and the column sum for a standard $m \times n$ magic rectangle.
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item The sum of the integers from $1$ through $8$ is $1+2+3+4+5+6+7+8=36$. There are $4$ rows, so the
+row sum is $\frac{36}{4} = \boxed{9}$. There are $2$ columns, so the column sum is $\frac{36}{2} = \boxed{18}$.
+
+\item There are four possible ways, up to order: $1+8$, $2+7$, $3+6$, and $4+5$.
+
+\item Using the above, along with considerations for the column sum, we can construct a standard $4 \times 2$
+magic rectangle. One such example is shown below.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+1 & 8 \\ \hline
+7 & 2 \\ \hline
+6 & 3 \\ \hline
+4 & 5 \\ \hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{solution}
+
+
+\begin{problem}[6=3+2+1 points]
+In this problem, you will investigate the row and column sums for arbitrary magic rectangles.
+\begin{enumerate}[label=(\alph*)]
+\item Determine the row sum and the column sum for a standard $m \times n$ magic rectangle.
 (Hint: You may find the formula given in the hint for problem 2 useful.)
-What do your formulas give for a $4 \times 2$ magic rectangle? What about a $4 \times 3$ magic rectangle?
-Is your expression always guaranteed to be an integer? Why or why not?
-What are the implications of this?
+
+\item What do your formulas give for a $4 \times 2$ magic rectangle? What about a $4 \times 3$ magic rectangle?
+Are these correct?
+
+\item Is your expression always guaranteed to be an integer? Why or why not? What are the implications of this?
+\end{enumerate}
 \end{problem}
+
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item Once again, we will use the method of double counting. A standard $m \times n$ magic rectangle
+uses the integers from $1$ throguh $mn$ each once, so the sum of all the entries is 
+$1 + 2 + 3 + \cdots + mn = \frac{mn(mn+1)}{2}$. There are $m$ rows, so the row sum is $\boxed{\frac{n(mn+1)}{2}}$.
+There are $n$ columns, so the column sum is $\boxed{\frac{m(mn+1)}{2}}$.
+
+\item For a $4 \times 2$ magic rectangle the row sum is $\frac{2(9)}{2} = \boxed{9}$ and the column sum is
+$\frac{4(9)}{2} = \boxed{18}$. These are consistent with the previous problem.
+
+For a $4 \times 3$ magic rectangle, the formula for the row sum gives $\frac{3(9)}{2} = 13.5$, which is not
+an integer, which makes no sense since all the entries are integers. This means that no standard $4 \times 3$
+magic rectangle exists.
+
+\item $\boxed{\text{No}}$, the formulas do not always give an integer, as demonstrated by the standard
+$4 \times 3$ magic rectangle in the previous part. This means that there are some dimensions for which
+it is impossible to construct a standard magic rectangle.
+\end{enumerate}
+\end{solution}
+
 
 \begin{problem}[8=4+4 points]
 For each of the following, find a standard magic rectangle with the given dimensions or prove that it is impossible to do so.
@@ -158,8 +326,43 @@ For each of the following, find a standard magic rectangle with the given dimens
 \end{enumerate}
 \end{problem}
 
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+\item We can construct this very similarly to how we found a standard $4 \times 2$ magic rectangle before.
+One such example is shown below.
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+1 & 16 \\ \hline
+15 & 2 \\ \hline
+3 & 14 \\ \hline
+13 & 4 \\ \hline
+12 & 5 \\ \hline
+6 & 11 \\ \hline
+10 & 7 \\ \hline
+8 & 9 \\ \hline
+\end{tabular}
+\end{center}
+
+\item The sum of the integers from $1$ through $8 \cdot 3 = 24$ is $\frac{24(25)}{2} = 150$. There are $8$
+rows, so the row sum would have to be $\frac{150}{8} = 18.75$, which is not an integer. But all the entries
+are integers, so this is impossible, meaning that it is impossible to construct a standard $8 \times 3$ magic
+rectangle.
+\end{enumerate}
+\end{solution}
+
+
 \begin{problem}[5 points]
 Show that it is impossible to construct a standard $m \times n$ rectangle if $m+n$ is odd.
 \end{problem}
+
+\begin{solution}
+If $m+n$ is odd, then one of $m, n$ is odd and the other is even. Without loss of generality, suppose
+$m$ is odd and $n$ is even. The sum of all the entries is $1 + 2 + 3 + \cdots + mn = \frac{mn(mn+1)}{2}$.
+There are $n$ columns, meaning that the column sum would be $\frac{m(mn+1)}{2}$. However, since $m$ is odd
+and $n$ is even, $mn + 1$ is also odd, so the numerator $m(mn+1)$ is the product of two odd numbers, which
+cannot be divisible by $2$. Hence this is not an integer, so it is impossible to construct a standard
+$m \times n$ rectangle, as desired.
+\end{solution}
 
 \end{document}
