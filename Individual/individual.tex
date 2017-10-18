@@ -6,15 +6,16 @@
 \usepackage{asymptote}
 \usepackage[none]{hyphenat}
 
+\newcommand{\sevenpoints}{Time limit: 60 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Individual Solutions}}
+
 \begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
 \def\solutionone{\comment}
 \def\solutiontwo{\comment}
+\renewcommand{\righthead}{\fdbox{Round}{Individual}}
 \end{comment}
-
-\newcommand{\sevenpoints}{Time limit: 60 minutes.}
-\newcommand{\righthead}{\fdbox{Round}{Individual}}
 
 \begin{document}
 \setlength{\parindent}{0pt}
@@ -67,6 +68,87 @@ length, which is $4 \cdot 45\ \text{ft} = \boxed{180}\ \text{ft}$.
 
 
 \begin{problem}
+NAME is working at a job with an odd payscale. On the first day, NAME receives $\$1$.
+On the second day, NAME receives $\$2$. This keeps going, with NAME receiving $\$k$ on
+the $k$th day, until he receives $\$28$ on the $28$th day. Calculate the total amount
+of money in dollars that NAME received throughout the 28 days.
+\end{problem}
+
+\begin{answer}
+$\boxed{406}$ (dollars)
+\end{answer}
+
+\begin{solution}
+The total number of dollars NAME receives is $1 + 2 + 3 + \cdots + 28$. We can either compute
+this directly, or use a clever trick by Gauss. Let $S$ be the above sum. Then
+\begin{align*}
+S &= 1\ +\ 2\ +\ 3\ + \cdots + 28 \\
+S &= 28 + 27 + 26 + \cdots + 1 \\
+\end{align*}
+Adding these two equations together gives
+\begin{align*}
+2S &= (1+28) + (2+27) + (3+26) + \cdots + (28+1) \\
+&= 29 + 29 + 29 + \cdots + 29 \\
+&= 28(29),
+\end{align*}
+so $S = 14(29) = \boxed{406}$.
+\end{solution}
+
+
+\begin{problem}
+Paula the painter has red paint, yellow paint, green paint, and blue paint.
+She wants to paint her walls with one color and the floor with a different color.
+Determine the number of ways she can paint her walls and floor.
+\end{problem}
+
+\begin{answer}
+$\boxed{12}$ (ways)
+\end{answer}
+
+\begin{solution}
+Paula has $4$ choices for what color to paint her walls. Once she does that,
+since she wants the floor to be a different color, she has $4-1 = 3$ remaining colors
+to choose from. This gives a total of $4 \cdot 3 = \boxed{12}$ options.
+\end{solution}
+
+
+\begin{problem}
+The decibel scale is used to measure the intensity of sound, or how loud a sound is.
+It is designed so that a sound $10$ times as loud as another measures $10$ decibels higher.
+For example, if a quiet libary is at $40$ decibels, a sound $10$ times louder would be 
+at $50$ decibels. If a vacuum cleaner is $1000$ times louder than the quiet library, 
+compute the number of decibels for a vacuum cleaner.
+\end{problem}
+
+\begin{answer}
+$\boxed{70}$ (decibels)
+\end{answer}
+
+\begin{solution}
+Since the vacuum cleaner is $1000 = 10 \cdot 10 \cdot 10 = 10^3$ times louder,
+that corresponds to an increase of $10 + 10 + 10 = 3(10) = 30$ decibels, so
+the result is $40 + 30 = \boxed{70}$ decibels.
+\end{solution}
+
+
+\begin{problem}
+NAME wants to buy a duck at STORE. He has one coupon for $10\%$ off and another coupon for $\$10$ off.
+If the sale price of the duck is $\$50$ and NAME is only allowed to use one of his two coupons,
+determine the cheapest price, in dollars, at which NAME can buy the duck.
+\end{problem}
+
+\begin{answer}
+$\boxed{40}$ (dollars)
+\end{answer}
+
+\begin{solution}
+The first coupon gives him a discount of $10\% (\$50) = 0.1(\$50) = \$5$, while the second coupon
+gives him a discount of $\$10$. Clearly the second one is a better deal, so the cheapest
+price at which NAME can by a the duck is $\$50 - \$10 = \boxed{\$40}$.
+\end{solution}
+
+
+\begin{problem}
 Compute the number of ways Alice, Bob, Charlie, David, and Edward can stand in a line if Charlie
 insists on being the person in the middle.
 \end{problem}
@@ -78,6 +160,36 @@ $\boxed{24}$ (ways)
 \begin{solution}
 Once Charlie is in the middle, the remaining $4$ people can line up in the remaining four spots
 in any order, which gives $4! = 4 \cdot 3 \cdot 2 \cdot 1 = \boxed{24}$ total ways.
+\end{solution}
+
+
+\begin{problem}
+A circular garden with area $4\pi$ has a circular walkway, shaded in the diagram below,
+around the outside of the garden with width equal to the radius of the graden. 
+Compute the area of the walkway (shaded region) outside the garden.
+\begin{figure}[H]
+\begin{center}
+\begin{asy}
+import graph;
+unitsize(12);
+filldraw(Circle((0, 0), 4), gray);
+filldraw(Circle((0, 0), 2), white);
+\end{asy}
+\end{center}
+\end{figure}
+\end{problem}
+
+\begin{answer}
+$\boxed{12\pi}$
+\end{answer}
+
+\begin{solution}
+The area of a circle is given by $\pi r^2$ where $r$ is the radius of the circle.
+If $\pi r^2 = 4\pi$, then $r = 2$ is the radius of the garden. Hence the width
+of the garden is also $2$, so the radius of the outer circle is $2+2 = 4$.
+The area of the shaded walkway equals the area of the entire outer circle,
+which consists of the walkway and the garden, minus the area of the garden.
+This is $\pi(4)^2 - 4\pi = 16\pi - 4\pi = \boxed{12\pi}$
 \end{solution}
 
 
@@ -120,7 +232,7 @@ fourth statement true, and the other $\boxed{4}$ statements false.
 
 \begin{problem}%[Kyle]
 In the city of Mathalopolis, there is a $\frac{1}{3}$ chance that it rains on any given day.
-What isthe probability it rains in Mathalopolis at some point during two consecutive days?
+Compute the probability it rains in Mathalopolis at some point during two consecutive days.
 \end{problem}
 
 \begin{answer}
@@ -154,60 +266,70 @@ value of $m\angle T$ is $180^\circ - 50^\circ - 89^\circ = \boxed{41^\circ}$.
 
 
 \begin{problem}
-NAME has three weeks to read BOOK for English class. During the first week, 
-enthusiastic NAME reads half of the book. In the second week, NAME has to study for a biology test, 
-so he is only able to read another $\frac{1}{6}$ of the book. Having procrastinated, 
-NAME finishes the remaining $65$ pages of the book in the third week. Calculate the number of pages in the book.
+Compute the number of ordered pairs $(x, y)$ of positive even integers such that $x \cdot y = 40$.
 \end{problem}
 
 \begin{answer}
-$\boxed{195}$ (page)
+$\boxed{4}$ (pairs)
 \end{answer}
 
 \begin{solution}
-During the first two weeks, NAME reads $\frac{1}{2} + \frac{1}{6} = \frac{2}{3}$ of the book, leaving
-$1 - \frac{2}{3} = \frac{1}{3}$ of the book for the last week. We are given that NAME reads $65$ pages in
-the third week, which is $\frac{1}{3}$ of the book, so the entire book contains $3(65) = \boxed{195}$ pages.
-\end{solution}
-
-
-\begin{problem}%[Kyle]
-Compute the smallest perfect square greater than $1$ that cannot be written as the sum of two
-(not necessarily distinct) positve prime numbers.
-\end{problem}
-
-\begin{answer}
-$\boxed{121}$
-\end{answer}
-
-\begin{solution}
-It is easy to check that $4 = 2+2$, $9 = 2+7$, $16 = 5+11$, $25 = 2+23$, $36 = 7+29$, $49 = 2+47$,
-$64 = 3+61$, $81 = 2+79$, and $100 = 3+97$. Note that an odd perfect square can only be the
-sum of an even and odd prime, and the only even prime is $2$. Since $11^2 - 2 = 119$ is not prime,
-it is impossible to write $11^2 = \boxed{121}$ as the sum of two positive primes.
-For small even squares, it is not difficult to simply test out cases. The more general problem
-is known as Goldbach's conjecture.
+Since $x$ and $y$ are positive even integers, we can write $x = 2x_1$ and $y = 2y_1$, where 
+$x_1$ and $y_1$ are positive integers. Then $4x_1y_1 = 40$, or $x_1y_1 = 10 = 2 \cdot 5$. 
+At this point it is easy to see that there are $\boxed{4}$ ordered pairs of factors for $10$:
+$(1, 10)$, $(2, 5)$, $(5, 2)$, and $(10, 1)$.
 \end{solution}
 
 
 \begin{problem}
-Compute the number of positive three-digit integers without leading zeros (so 042 does not count) that
-have either three even digits or three odd digits.
+NAME has three weeks to read BOOK for English class. During the first week, 
+enthusiastic NAME reads half of the book. In the second week, NAME has to study for a biology test, 
+so he is only able to read another $\frac{1}{6}$ of the book. Having procrastinated, 
+NAME finishes the remaining $72$ pages of the book in the third week. Calculate the number of pages in the book.
 \end{problem}
 
 \begin{answer}
-$\boxed{225}$
+$\boxed{216}$ (pages)
 \end{answer}
 
-\begin{solution}%[Kyle]
-If the number has three even digits, then the hundreds digit can be either $2, 4, 6$, or $8$, for $4$ choices,
-and the tens and ones digit can each be any of $0, 2, 4, 6, 8$, for $5$ choices each.
-This gives $4 \cdot 5 \cdot 5 = 100$ integers for this case. \newline
+\begin{solution}
+During the first two weeks, NAME reads $\frac{1}{2} + \frac{1}{6} = \frac{2}{3}$ of the book, leaving
+$1 - \frac{2}{3} = \frac{1}{3}$ of the book for the last week. We are given that NAME reads $72$ pages in
+the third week, which is $\frac{1}{3}$ of the book, so the entire book contains $3(72) = \boxed{216}$ pages.
+\end{solution}
 
-If the number has three odd digits, then each of the three digits can be any of $1, 3, 5, 7$, or $9$, for
-$5$ choices each. This gives $5 \cdot 5 \cdot 5 = 125$ integers for this case. \newline
 
-In total, we have $100 + 125 = \boxed{225}$ such numbers.
+\begin{problem}%[Kyle]
+For any positive integer $n$, let $\xi(n)$ be the least common multiple of $1!, 2!, 3!$, and so
+forth, up throguh $n!$, where $n! = n(n-1)(n-2) \cdots (2)(1)$. Compute $\frac{\xi(2018)}{\xi(2017)}$.
+\end{problem}
+
+\begin{answer}
+$\boxed{2018}$
+\end{answer}
+
+\begin{solution}
+Note that in general, $\xi(n) = n!$. This is because the least common multiple must be at least
+the largest integer in the set, which in this case is $n!$, and clearly $n!$ is divisible
+by $k!$ for all positive integers $k \le n$. Hence $\frac{\xi(2018)}{\xi(2017)} =
+\frac{2018!}{2017!} = \frac{2018 \cdot 2017!}{2017!} = \boxed{2018}$.
+\end{solution}
+
+
+\begin{problem}
+Point $A$ is at $(3, 0)$, point $B$ is at $(10, 0)$, and point $C$ is at $(0, y)$.
+If the area of triangle $ABC$ is $42$, determine all possible values of $y$.
+\end{problem}
+
+\begin{answer}
+$\boxed{\pm 12}$
+\end{answer}
+
+\begin{solution}
+The area of a triangle is given by $\frac{1}{2} \text{base} \cdot \text{height}$.
+In this case, if we let $AB = 10-3 = 7$ be the base, then the height is the perpendicular
+from $C$ to $AB$, which has length $|y|$. Hence we have $\frac{1}{2}\cdot 7|y| = 42$,
+or $|y| = 12$, giving $y = \boxed{\pm 12}$.
 \end{solution}
 
 
@@ -231,6 +353,84 @@ x + y = 18
 \end{align*}
 Subtracting $5$ times the second equation from the first gives $y = 100 -  5(18) = \boxed{10}$ 
 teams with $6$ students.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
+Compute the number of positive three-digit integers without leading zeros (so 042 does not count) that
+have either three even digits or three odd digits.
+\end{problem}
+
+\begin{answer}
+$\boxed{225}$
+\end{answer}
+
+\begin{solution}
+If the number has three even digits, then the hundreds digit can be either $2, 4, 6$, or $8$, for $4$ choices,
+and the tens and ones digit can each be any of $0, 2, 4, 6, 8$, for $5$ choices each.
+This gives $4 \cdot 5 \cdot 5 = 100$ integers for this case. \newline
+
+If the number has three odd digits, then each of the three digits can be any of $1, 3, 5, 7$, or $9$, for
+$5$ choices each. This gives $5 \cdot 5 \cdot 5 = 125$ integers for this case. \newline
+
+In total, we have $100 + 125 = \boxed{225}$ such numbers.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
+Harry and William are speedracers. In a race, both of them line up at the same starting point.
+However, Harry knows that William runs faster than him, so William allows Harry to have
+a five-second head start. If William runs $20\%$ faster than Harry and the both run at
+constant speeds, compute the amount of time, in seconds, that Harry runs before William passes him.
+\end{problem}
+
+\begin{answer}
+$\boxed{30}$ (seconds)
+\end{answer}
+
+\begin{solution}
+Suppose Harry runs at speed $s$ meters per second (the units here are unimportant). Then William
+runs at $1.2s$ meters per second. In the first five seconds, Harry gains a $5s$ meter lead.
+Every second afterwards, William recuperates $1.2s - s = 0.2s$ meters, so it will take
+him $\frac{5}{0.2} = 25$ additional seconds to catch up. Hence Harry will run for $5 + 25 = \boxed{30}$
+seconds before being passed.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
+Compute the smallest perfect square greater than $1$ that cannot be written as the sum of two
+(not necessarily distinct) positve prime numbers.
+\end{problem}
+
+\begin{answer}
+$\boxed{121}$
+\end{answer}
+
+\begin{solution}
+It is easy to check that $4 = 2+2$, $9 = 2+7$, $16 = 5+11$, $25 = 2+23$, $36 = 7+29$, $49 = 2+47$,
+$64 = 3+61$, $81 = 2+79$, and $100 = 3+97$. Note that an odd perfect square can only be the
+sum of an even and odd prime, and the only even prime is $2$. Since $11^2 - 2 = 119$ is not prime,
+it is impossible to write $11^2 = \boxed{121}$ as the sum of two positive primes.
+For small even squares, it is not difficult to simply test out cases. The more general problem
+is known as Goldbach's conjecture.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
+A rectangle is inscribed inside a circle with area $9\pi$. From each side of the rectangle,
+a square is extruded outward. Compute the sum of the areas of the four squares.
+\end{problem}
+
+\begin{answer}
+$\boxed{72}$
+\end{answer}
+
+\begin{solution}
+Let the length and width of the rectangle be $l$ and $r$, respectively. Then the sum of 
+the areas of the four squares is $2(l^2 + r^2)$. By the Pythagorean Theorem,
+$l^2 + r^2 = d^2$, where $d$ is the length of the diagonal, which is also the diameter
+of the circle. The area of a circle is given by $\pi r^2 = \frac{1}{4}\pi d^2 = 9\pi$,
+so $d^2 = 36$. Hence $2(l^2 + r^2) = 2(36) = \boxed{72}$.
 \end{solution}
 
 
@@ -271,7 +471,28 @@ The latter option gives more highlighters, so we can buy a maximum of $10(6) + 2
 \end{solution}
 
 
-\begin{problem}
+\begin{problem}%[Kyle]
+One percent of all mathletes are legendary. Some mathletes are oracles, whose job is to predict
+whether a given mathlete is legendary. Oracles make correct predictions $95\%$ of the time.
+Kural the mathlete asks an oracle whether he is legendary, and the oracle tells him that he is.
+Determine the probability that he is actually legendary.
+\end{problem}
+
+\begin{answer}
+$\boxed{\frac{19}{118}}$
+\end{answer}
+
+\begin{solution}
+This is a problem in conditional probability. There are two possible results in our sample space.
+Either Kural is legendary and the oracle predicts correctly, which occurs with probability
+$\frac{1}{100} \cdot \frac{19}{20}$, or Kural is not legendary and the oracle predicts incorrectly, 
+which occurs with probability $\frac{99}{100} \cdot \frac{1}{20}$. The former is the result we
+want, so the probability is $\dfrac{\frac{1}{100} \cdot \frac{19}{20}}{\frac{1}{100} \cdot \frac{19}{20} + \frac{99}{100} \cdot \frac{1}{20}}
+= \dfrac{1 \cdot 19}{1 \cdot 19 + 99 \cdot 1} = \boxed{\frac{19}{118}}$.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
 Convex quadrilateral $TJHS$ has side lengths $TJ = JH = 5$, $HS = 1$, and $ST = 7$. If $\angle TJH$ is a right
 angle, compute the area of quadrilateral $TJHS$.
 \end{problem}
@@ -286,6 +507,59 @@ $TH^2 = TJ^2 + JH^2 = 5^2 + 5^2 = 50$. However, we also have $HS^2 + ST^2 = 1^2 
 so by the converse, triangle $HST$ is also a right triangle with $\angle HST$ being a right angle. 
 The area of the quadrilateral is then sum of the area of the two right triangles, 
 which is $\frac{1}{2}(5)(5) + \frac{1}{2}(1)(7) = \frac{25}{2} + \frac{7}{2} = \boxed{16}$.
+\end{solution}
+
+
+\begin{problem}%[Kyle]
+Compute the positive real number $x$ such that $\sqrt[3]{x + 3\sqrt[3]{x + 3\sqrt[3]{x + \cdots}}} = 3$.
+\end{problem}
+
+\begin{answer}
+$\boxed{18}$
+\end{answer}
+
+\begin{solution}
+Cubing both sides of the equation gives $x + 3\sqrt[3]{x+3\sqrt[3]{x + \cdots}} = 27$.
+However, we already know that $\sqrt[3]{x + 3\sqrt[3]{x + 3\sqrt[3]{x + \cdots}}} = 3$, and this expression 
+is repeated in the second term on the left side, so the equation is equivalent to $x + 3(3) = 27$.
+Subtracting $3(3) = 9$ from both sides gives $x = \boxed{18}$.
+\end{solution}
+
+
+\begin{problem}
+Find all possible areas of rectangles with integer side lengths whose area equals its perimeter.
+\end{problem}
+
+\begin{answer}
+$\boxed{16, 18}$
+\end{answer}
+
+\begin{solution}
+Let $l$ and $w$ be the length and width of the rectangle, respectively. Its perimeter is
+$2l + 2w$ and its area is $lw$, so $lw = 2w + 2l$, or $lw - 2w - 2l + 4 = 4$. Thus
+$(l-2)(w-2) = 4$. Since $l$ and $w$ are integers, we look at possible integer factors
+of $4$: $1 \cdot 4$ or $2 \cdot 2$. If $l-2$ and $w-2$ are $1$ and $4$, in some order,
+then $l$ and $w$ are $3$ and $6$, which gives an area of $\boxed{18}$. If $l-2$
+and $w-2$ are $2$ and $2$, then $l$ and $w$ are $4$ and $4$, which gives an area of $\boxed{16}$.
+\end{solution}
+
+
+\begin{problem}%[Kevin Zhang]
+Compute the last four digits in $101^{2017}$.
+\end{problem}
+
+\begin{answer}
+$\boxed{1701}$
+\end{answer}
+
+\begin{solution}
+We start by expanding $101^{2017} = (1 + 100)^{2017}$ with the Binomial Theorem:
+\[(1 + 100)^{2017} = 1 + \binom{2017}{1}(100) + \binom{2017}{2}(100)^2 + 
+\binom{2017}{3}(100)^3 + \cdots + \binom{2017}{2016}100^{2016} + 100^{2017}.\]
+Note that for all $n \ge 2$, $100^n$ ends in four zeros, so they do not affect
+the last four digits. Hence it suffices to look at the first two terms in the 
+expansion: $1 + \binom{2017}{1}(100) = 1 + 2017(100) = 201701$. The last
+four digits are $\boxed{1701}$.
 \end{solution}
 
 
