@@ -5,12 +5,13 @@
 \usepackage{../tjimo}
 
 \newcommand{\sevenpoints}{Time limit: 30 minutes.}
-\newcommand{\righthead}{\fdbox{Round}{Practice Power}}
+\newcommand{\righthead}{\fdbox{Round}{Practice Power Solutions}}
 
-\begin{comment}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
-\end{comment}
+\renewcommand{\righthead}{\fdbox{Round}{Practice Power}}
+%\end{comment}
 
 \renewenvironment{problem}{\begin{problems}}{\end{problems}\vspace{5pt}}
 
@@ -84,7 +85,7 @@ A \textit{standard} $n \times n$ magic square is one that uses the integers from
 \end{definition}
 
 \begin{problem}[4 points]
-Fill in the missing entries below (replicated on the answer sheet) so that the result is a standard $4 \times 4$ magic square.
+Fill in the missing entries below so that the result is a standard $4 \times 4$ magic square.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -124,7 +125,7 @@ to fill in the second and third row entries in the first and last columns. The s
 in the second row is $11+10 = 21$, so it needs $34-21 = 13$ more, and the only way to make $13$ out of
 the possible remaining numbers is $5+8$, so the two missing entries must be $5$ and $8$, in some order.
 Similarly, in the first column, the sum of the two current entries is $16+4=20$, so it needs $34-20=14$
-more, and the only way to make $14$ is with $9+5$. Hence the entry in the second row and first column
+more, and the only way to make $14$ is with $5+9$. Hence the entry in the second row and first column
 must be $5$, the common number between our analyses above. From here, it is easy to see that the entry in
 the third row and first column must be $9$, the entry in the second row and last column must be $8$,
 and the entry in the third row and last column must be $12$, giving the completed magic square below.
@@ -145,7 +146,7 @@ and the entry in the third row and last column must be $12$, giving the complete
 This problem will guide you through computing the magic sum for a standard $3 \times 3$ magic square.
 
 \begin{enumerate}[label=(\alph*)]
-\item What are the nine numbers used for the entries of this standard $3 \times 3$ magic square?
+\item What are the nine numbers used for the entries of a standard $3 \times 3$ magic square?
 
 \item What is the sum of these $9$ numbers?
 
@@ -158,7 +159,7 @@ In terms of $S$, what is the sum of all these rows?
 
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
-\item The nine numbers used for the standard $3 \times 3$ magic square are $\boxed{1,2,3,4,5,6,7,8, \text{and } 9}$.
+\item The nine numbers used for a standard $3 \times 3$ magic square are $\boxed{1,2,3,4,5,6,7,8, \text{and } 9}$.
 
 \item The sum of these nine numbers is $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = \boxed{45}$.
 
@@ -178,7 +179,7 @@ Determine the magic sum for a standard $4 \times 4$ magic square.
 
 
 \begin{solution}
-We use the same approach as before. The sum of the entires of a standard $4 \times 4$ magic square is
+We use the same approach as before. The sum of the entries of a standard $4 \times 4$ magic square is
 $1+2+3+4+5+6+7+8+9+10+11+12+13+14+15+16 = 136$. There are $4$ rows, so if the sum of each row is $S$,
 then the sum of all entries also equals the sum of four rows, or $4S$. Then $4S = 136$, so $S = \frac{136}{4} = \boxed{34}$.
 \end{solution}
@@ -198,7 +199,7 @@ In this problem, you will try to construct a standard $2 \times 2$ magic square.
 
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
-\item Again, we use the above approach of double counting. The sum of the four entires is $1+2+3+4=10$, and 
+\item Again, we use the above approach of double counting. The sum of the four entries is $1+2+3+4=10$, and 
 there are $2$ rows, so the sum for each row would be $\frac{10}{2} = \boxed{5}$, which must be the magic sum.
 
 \item The only possible ways to sum two distinct numbers from the set $\{1, 2, 3, 4\}$ to get $5$ are
@@ -238,7 +239,7 @@ $17+x = x+x$, or $x = 17$. Hence the only way to fill in the missing entries is 
 \end{solution}
 
 \begin{problem}[4 points]
-Find all possible $2 \times 2$ magic squares with positive integer entires. The one above should be included.
+Classify all possible $2 \times 2$ magic squares with positive integer entries. The one above should be included.
 \end{problem}
 
 \begin{solution}
@@ -262,7 +263,7 @@ In other words, all possible $2 \times 2$ magic squares are those whose entries 
 
 \begin{definition}
 An $m \times n$ \textit{magic rectangle} is a grid with $m$ rows and $n$ columns and positive integers in each cell such that
-the sum of the integers in each row is the same, and the sum of the integers in each column is the same,
+the sum of the integers in each row is the same and the sum of the integers in each column is the same,
 but these two sums do not necessarily have to be the same.
 The first is called the \textit{row sum} and the second is called the \textit{column sum}.
 \end{definition}
@@ -313,7 +314,7 @@ Show that any magic rectangle whose row sum equals the column sum must, in fact,
 Let the row sum and column sum both be $S$, and suppose the dimensions of the magic rectangle are $m \times n$. 
 Once again, we use the approach of double counting.  The sum of the entries is the same no matter how we count this sum.
 There are $m$ rows, so on the one hand the sum is $mS$. There are $n$ rows, so on the other hand the sum is $nS$.
-Hence $mS = nS$, and since all entires are positive integers, $S \ne 0$, so $m = n$, as desired.
+Hence $mS = nS$, and since all entries are positive integers, $S \ne 0$, so $m = n$, as desired.
 Although we have concluded that the magic rectangle is in the shape of a square, it need not be a magic
 square since the diagonal sums do not have to be equal to this sum, as seen by the example in the previous problem.  
 \end{solution}
