@@ -4,18 +4,20 @@
 \usepackage{tikz}
 
 \usepackage{../tjimo}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 %\usepackage[pdftex]{graphicx}
 
-\begin{comment}
+\newcommand{\sevenpoints}{Time limit: 40 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Guts Solutions}}
+
+%\def\newpage{}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
-\def\solutionone{\comment}
-\def\solutiontwo{\comment}
-\end{comment}
-
-\newcommand{\sevenpoints}{Time limit: 40 minutes.}
-\newcommand{\righthead}{\fdbox{Round}{Guts}}
+\renewcommand{\righthead}{\fdbox{Round}{Guts}}
+\setlength{\footskip}{0em}
+\rfoot{\emph{\sevenpoints}\vspace{5em}}
+%\end{comment}
 
 \DeclareMathOperator{\lcm}{lcm}
 
@@ -178,15 +180,17 @@ If it rains on Saturday, there is a probability of $0.4 \cdot 0.6 =  0.24$ that 
 \end{solution}
 
 \begin{problem}
-How many ways can I seat Josh, Akshaj, Jeffery, Katherine, Michael, and Wendy at a circular table so that Wendy and Katherine are sitting next to each other?
+How many ways can I seat Josh, Akshaj, Jeffery, Katherine, Michael, and Wendy at a circular table, where all the seats are distinguishable,
+so that Wendy and Katherine are sitting next to each other?
 \end{problem}
 
 \begin{answer}
-48
+288
 \end{answer}
 
 \begin{solution}
-Let us fix Wendy and Katherine in two adjacent seats. Then, there are $4!=24$ ways to arrange the other 4 people. However, Wendy and Katherine can switch seats, which gives us a total of $24 \cdot 2 = \boxed{48}$ ways.
+Let us fix Wendy and Katherine in two adjacent seats in one of $6$ ways.. Then, there are $4!=24$ ways to arrange the other 4 people. 
+However, Wendy and Katherine can switch seats, which gives us a total of $24 \cdot 2 \cdot 6 = \boxed{288}$ ways.
 \end{solution}
 
 \begin{problem}
@@ -242,7 +246,7 @@ Using the method of sticks and stones (or stars and bars), we see that there are
 \end{solution}
 
 \begin{problem}
-Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers for 3 dollars and evidence for 2 dollars each, how many combinations of lawyers and evidence can Gideon buy, assuming that he needs to buy a lawyer and he does not need to spend all 10 dollars?
+Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers for 3 dollars and evidence for 2 dollars each, how many combinations of lawyers and evidence can Gideon get, assuming that he needs to hire a lawyer and he does not need to spend all 10 dollars?
 \end{problem}
 
 \begin{answer}
@@ -250,7 +254,11 @@ Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers
 \end{answer}
 
 \begin{solution}
-Since Gideon needs to buy a lawyer, the problem is equivalent to Gideon not having to buy a lawyer and having 7 dollars total. Note that he cannot buy three or more lawyers. If he buys two additional lawyers, he cannot buy any evidence. If he buys one additional lawyer, he can buy up to two pieces of evidence, giving three possibilities. If he buys no additional lawyers, he can buy up to three pieces of evidence, yielding four possibilities. Summing this up, we have a total of $1+3+4=\boxed{8}$ combinations.
+Since Gideon needs to hire a lawyer, the problem is equivalent to Gideon not having to hire a lawyer and having 7 dollars total. 
+Note that he cannot hire three or more lawyers. If he hires two additional lawyers, he cannot buy any evidence. 
+If he hires one additional lawyer, he can buy up to two pieces of evidence, giving three possibilities. 
+If he hires no additional lawyers, he can buy up to three pieces of evidence, yielding four possibilities. 
+Summing this up, we have a total of $1+3+4=\boxed{8}$ combinations.
 \end{solution}
 
 \begin{problem}
@@ -278,7 +286,7 @@ If Neeyanth is not a freshman, then Ryan is a freshman, which means that both Ne
 \newpage
 \section*{Set 5}
 \begin{problem}
-Given that the median of 7 not necessarily distinct integers in the set $\{1, 2, 3, \dots 15\}$ is 8 and the distinct mode is 9, what is the largest possible mean?
+Given that the median of 7 not necessarily distinct integers in the set $\{1, 2, 3, \dots 15\}$ is 8 and the unique mode is 9, what is the largest possible mean?
 \end{problem}
 
 \begin{answer}
@@ -286,11 +294,13 @@ $\frac{59}{7}$
 \end{answer}
 
 \begin{solution}
-There must be an 8 since there are 7 integers, and at least 2 9's. To maximize the mean, we should use 
+There must be an 8 since there are 7 integers, and at least two 9's. To maximize the mean, we should use a $15$ for the remaining
+number greater than the median, and the three greatest numbers less than the median: $5$, $6$, and $7$. The mean is then
+$\frac{5+6+7+8+9+9+15}{7} = \boxed{\frac{59}{7}}$.
 \end{solution}
 
 \begin{problem}
- What is the smallest positive integer that gives a remainder of 1 when divided by 3, a remainder of 3 when divided by 5, and 5 when divided by 7?
+What is the smallest positive integer that gives a remainder of 1 when divided by 3, a remainder of 3 when divided by 5, and 5 when divided by 7?
 \end{problem}
 
 \begin{answer}
@@ -298,7 +308,8 @@ There must be an 8 since there are 7 integers, and at least 2 9's. To maximize t
 \end{answer}
 
 \begin{solution}
-We can write this as $x \equiv -2 (\pmod 3)$, $x \equiv -2 (\pmod 5)$, and $x \equiv -2 (\pmod 7)$. Thus, the smallest possible value of $x$ is $\lcm (3, 5, 7) - 2 = 105-2 = \boxed{103}$
+We can write this as $x \equiv -2 \pmod{3}$, $x \equiv -2 \pmod{5}$, and $x \equiv -2 \pmod{7}$. 
+Thus, the smallest possible value of $x$ is $\lcm (3, 5, 7) - 2 = 105-2 = \boxed{103}$
 \end{solution}
 
 \begin{problem}
@@ -322,7 +333,10 @@ $\frac{163}{256}$
 \end{answer}
 
 \begin{solution}
-The probability of getting 4 heads and 4 tails is equal to $\frac{8 \choose 4}{2^8} = \frac{70}{256} = \frac{35}{128}$. Note that the probability of getting more than 4 heads is equal to the probability of getting more than 4 tails, which is equal to the probability of getting less than 3 heads. Thus, the probability of getting at least 4 heads is $\dfrac{1+\frac{35}{128}}{2} = \boxed{\frac{163}{256}}$
+The probability of getting 4 heads and 4 tails is equal to $\frac{\binom{8}{4}}{2^8} = \frac{70}{256} = \frac{35}{128}$. 
+Note that the probability of getting more than 4 heads is equal to the probability of getting more than 4 tails, 
+which is equal to the probability of getting less than 3 heads. Thus, the probability of getting at least 4 heads is 
+$\dfrac{1+\frac{35}{128}}{2} = \boxed{\frac{163}{256}}$
 \end{solution}
 
 \newpage
@@ -428,7 +442,7 @@ Allen the alien lives on Lelan. All 52 Lelans start the day by drawing a card wi
 \end{problem}
 
 \begin{answer}
-
+$\frac{44}{65}$
 \end{answer}
 
 \begin{solution}
@@ -460,6 +474,8 @@ All altitudes intersect at one point, called the orthocenter. Thus, the area of 
 \end{solution}
 \newpage
 \section*{Set 8}
+
+\begin{comment}
 \begin{problem}
 Goldbach conjectured that any odd composite integer can be written as a sum of a prime and twice a square. What is the smallest counterexample?
 \end{problem}
@@ -467,9 +483,25 @@ Goldbach conjectured that any odd composite integer can be written as a sum of a
 \begin{answer}
 5777
 \end{answer}
+\end{comment}
 
 \begin{problem}
-When I searched the term "tjimo" (on October 12, 2017 at 8:50 PM), I got $G$ hits on Google and $B$ hits on Bing. What is $\frac{G}{B}$?
+Determine the largest integer $n$ such that $a^n + b^n = c^n$ has a solution $(a, b, c)$ in positive integers.
+\end{problem}
+
+\begin{answer}
+2
+\end{answer}
+
+\begin{solution}
+By Fermat's Last Theorem, for $n \ge 3$ the equation $a^n + b^n = c^n$ has no solutions in positive integers. For $n = 2$, there
+are infinitely many Pythagorean Triples satisfying this. For example, $3^2 + 4^2 = 5^2$.
+\end{solution}
+
+\begin{problem}
+When I searched the term ``tjimo" (on October 12, 2017 at 8:50 PM), I got $G$ hits on Google and $B$ hits on Bing. What is $\frac{G}{B}$?
+Any answer within $0.2$ of the correct answer receives $0.5$ points. Any answer within $0.1$ of the correct answer receives $1$ point.
+Any answer within $0.05$ of the correct answer receives $2$ points.
 \end{problem}
 
 \begin{answer}
@@ -477,7 +509,7 @@ When I searched the term "tjimo" (on October 12, 2017 at 8:50 PM), I got $G$ hit
 \end{answer}
 
 \begin{solution}
-There were 3730 hits on Google and 2760 hits on Bing. Divide them to get the desired answer of
+There were 3730 hits on Google and 2760 hits on Bing. Divide them to get the desired answer of $\frac{373}{276}$.
 \end{solution}
 
 \begin{problem}
@@ -485,7 +517,8 @@ Pick a number from 1 through 10. Your score will be the number you pick divided 
 \end{problem}
 
 \begin{problem}
-Pick an integer greater than 0. Your score will be equal to $\dfrac{1}{|Log(\frac{\overline{x}}{x})|}$ where $\overline{x}$ is the mean of all the answers submitted and $x$ is your answer.
+Pick an integer greater than 0. Your score will be equal to $\dfrac{1}{|\operatorname{Log}(\frac{\overline{x}}{x})|}$ 
+where $\overline{x}$ is the mean of all the answers submitted and $x$ is your answer.
 \end{problem}
 
 
