@@ -9,13 +9,11 @@
 \newcommand{\sevenpoints}{Time limit: 60 minutes.}
 \newcommand{\righthead}{\fdbox{Round}{Individual Solutions}}
 
-\begin{comment}
+%\begin{comment}
 \def\answer{\comment}
 \def\solution{\comment}
-\def\solutionone{\comment}
-\def\solutiontwo{\comment}
 \renewcommand{\righthead}{\fdbox{Round}{Individual}}
-\end{comment}
+%\end{comment}
 
 \begin{document}
 \setlength{\parindent}{0pt}
@@ -68,10 +66,10 @@ length, which is $4 \cdot 45\ \text{ft} = \boxed{180}\ \text{ft}$.
 
 
 \begin{problem}
-NAME is working at a job with an odd payscale. On the first day, NAME receives $\$1$.
-On the second day, NAME receives $\$2$. This keeps going, with NAME receiving $\$k$ on
+Larry is working at a job with an odd payscale. On the first day, he receives $\$1$.
+On the second day, he receives $\$2$. This keeps going, with he receiving $\$k$ on
 the $k$th day, until he receives $\$28$ on the $28$th day. Calculate the total amount
-of money in dollars that NAME received throughout the 28 days.
+of money in dollars that he received throughout the 28 days.
 \end{problem}
 
 \begin{answer}
@@ -79,7 +77,7 @@ $\boxed{406}$ (dollars)
 \end{answer}
 
 \begin{solution}
-The total number of dollars NAME receives is $1 + 2 + 3 + \cdots + 28$. We can either compute
+The total number of dollars Larry receives is $1 + 2 + 3 + \cdots + 28$. We can either compute
 this directly, or use a clever trick by Gauss. Let $S$ be the above sum. Then
 \begin{align*}
 S &= 1\ +\ 2\ +\ 3\ + \cdots + 28 \\
@@ -115,7 +113,7 @@ to choose from. This gives a total of $4 \cdot 3 = \boxed{12}$ options.
 \begin{problem}
 The decibel scale is used to measure the intensity of sound, or how loud a sound is.
 It is designed so that a sound $10$ times as loud as another measures $10$ decibels higher.
-For example, if a quiet libary is at $40$ decibels, a sound $10$ times louder would be 
+For example, if a quiet library is at $40$ decibels, a sound $10$ times louder would be 
 at $50$ decibels. If a vacuum cleaner is $1000$ times louder than the quiet library, 
 compute the number of decibels for a vacuum cleaner.
 \end{problem}
@@ -132,9 +130,9 @@ the result is $40 + 30 = \boxed{70}$ decibels.
 
 
 \begin{problem}
-NAME wants to buy a duck at STORE. He has one coupon for $10\%$ off and another coupon for $\$10$ off.
-If the sale price of the duck is $\$50$ and NAME is only allowed to use one of his two coupons,
-determine the cheapest price, in dollars, at which NAME can buy the duck.
+William wants to buy a duck at The General Store. He has one coupon for $10\%$ off and another coupon for $\$10$ off.
+If the sale price of the duck is $\$50$ and William is only allowed to use one of his two coupons,
+determine the cheapest price, in dollars, at which William  can buy the duck.
 \end{problem}
 
 \begin{answer}
@@ -144,7 +142,7 @@ $\boxed{40}$ (dollars)
 \begin{solution}
 The first coupon gives him a discount of $10\% (\$50) = 0.1(\$50) = \$5$, while the second coupon
 gives him a discount of $\$10$. Clearly the second one is a better deal, so the cheapest
-price at which NAME can by a the duck is $\$50 - \$10 = \boxed{\$40}$.
+price at which William  can by the duck is $\$50 - \$10 = \boxed{\$40}$.
 \end{solution}
 
 
@@ -165,7 +163,7 @@ in any order, which gives $4! = 4 \cdot 3 \cdot 2 \cdot 1 = \boxed{24}$ total wa
 
 \begin{problem}
 A circular garden with area $4\pi$ has a circular walkway, shaded in the diagram below,
-around the outside of the garden with width equal to the radius of the graden. 
+around the outside of the garden with width equal to the radius of the garden. 
 Compute the area of the walkway (shaded region) outside the garden.
 \begin{figure}[H]
 \begin{center}
@@ -174,6 +172,10 @@ import graph;
 unitsize(12);
 filldraw(Circle((0, 0), 4), gray);
 filldraw(Circle((0, 0), 2), white);
+
+label("Garden", (1.9,0), W);
+draw((3, 1) -- (6, 1));
+label("Walkway", (6, 1), E);
 \end{asy}
 \end{center}
 \end{figure}
@@ -240,7 +242,7 @@ $\boxed{\frac{5}{9}}$
 \end{answer}
 
 \begin{solution}
-The probaility that it does not rain on any given day is $1 - \dfrac{1}{3} = \dfrac{2}{3}$,
+The probability that it does not rain on any given day is $1 - \dfrac{1}{3} = \dfrac{2}{3}$,
 so the probability it does not rain on either of two days is 
 $\dfrac{2}{3} \cdot \dfrac{2}{3} = \dfrac{4}{9}$. Thus the probability that it rains at
 some point between the two days is $1 - \dfrac{4}{9} = \boxed{\frac{5}{9}}$.
@@ -282,10 +284,10 @@ $(1, 10)$, $(2, 5)$, $(5, 2)$, and $(10, 1)$.
 
 
 \begin{problem}
-NAME has three weeks to read BOOK for English class. During the first week, 
-enthusiastic NAME reads half of the book. In the second week, NAME has to study for a biology test, 
+Neeyanth has three weeks to read \textit{The Odyssey} for English class. During the first week, 
+enthusiastic he reads half of the book. In the second week, he has to study for a biology test, 
 so he is only able to read another $\frac{1}{6}$ of the book. Having procrastinated, 
-NAME finishes the remaining $72$ pages of the book in the third week. Calculate the number of pages in the book.
+he finishes the remaining $72$ pages of the book in the third week. Calculate the number of pages in the book.
 \end{problem}
 
 \begin{answer}
@@ -293,15 +295,15 @@ $\boxed{216}$ (pages)
 \end{answer}
 
 \begin{solution}
-During the first two weeks, NAME reads $\frac{1}{2} + \frac{1}{6} = \frac{2}{3}$ of the book, leaving
-$1 - \frac{2}{3} = \frac{1}{3}$ of the book for the last week. We are given that NAME reads $72$ pages in
+During the first two weeks, Neeyanth reads $\frac{1}{2} + \frac{1}{6} = \frac{2}{3}$ of the book, leaving
+$1 - \frac{2}{3} = \frac{1}{3}$ of the book for the last week. We are given that he reads $72$ pages in
 the third week, which is $\frac{1}{3}$ of the book, so the entire book contains $3(72) = \boxed{216}$ pages.
 \end{solution}
 
 
 \begin{problem}%[Kyle]
 For any positive integer $n$, let $\xi(n)$ be the least common multiple of $1!, 2!, 3!$, and so
-forth, up throguh $n!$, where $n! = n(n-1)(n-2) \cdots (2)(1)$. Compute $\frac{\xi(2018)}{\xi(2017)}$.
+forth, up through $n!$, where $n! = n(n-1)(n-2) \cdots (2)(1)$. Compute $\frac{\xi(2018)}{\xi(2017)}$.
 \end{problem}
 
 \begin{answer}
@@ -399,7 +401,7 @@ seconds before being passed.
 
 \begin{problem}%[Kyle]
 Compute the smallest perfect square greater than $1$ that cannot be written as the sum of two
-(not necessarily distinct) positve prime numbers.
+(not necessarily distinct) positive prime numbers.
 \end{problem}
 
 \begin{answer}
@@ -418,7 +420,22 @@ is known as Goldbach's conjecture.
 
 \begin{problem}%[Kyle]
 A rectangle is inscribed inside a circle with area $9\pi$. From each side of the rectangle,
-a square is extruded outward. Compute the sum of the areas of the four squares.
+a square is extruded outward, as shown by the dashed lines in the diagram below. 
+Compute the sum of the areas of the four squares.
+\begin{figure}[H]
+\begin{center}
+\begin{asy}
+import graph;
+unitsize(6);
+draw(Circle((0,0), 5));
+draw((3,4) -- (3,-4) -- (-3,-4) -- (-3,4)--cycle);
+draw((3,4) -- (3,10) -- (-3,10) -- (-3,4), dashed);
+draw((3,4) -- (11,4) -- (11,-4) -- (3,-4), dashed);
+draw((-3,-4) -- (-3,-10) -- (3,-10) -- (3,-4), dashed);
+draw((-3,-4) -- (-11,-4) -- (-11,4) -- (-3,4), dashed);
+\end{asy}
+\end{center}
+\end{figure}
 \end{problem}
 
 \begin{answer}
@@ -443,7 +460,7 @@ $\boxed{3}$ (numbers)
 \end{answer}
 
 \begin{solution}
-We will look at the two conditions separately and se which numbers satisfy both. If $t \cdot N$ has two digits,
+We will look at the two conditions separately and see which numbers satisfy both. If $t \cdot N$ has two digits,
 then $N$ must be between $\frac{10}{5} = 2$ and $\left\lfloor \frac{99}{5} \right\rfloor = 19$, inclusive.
 If $6 \cdot N$ has three digits, then $N$ must be between $\left\lceil \frac{100}{6} \right\rceil = 17$ and
 $\left\lfloor \frac{999}{6} \right\rceil = 166$, inclusive. There are $\boxed{3}$ numbers in the intersection
@@ -574,8 +591,8 @@ $\boxed{108}$ (degrees)
 
 \begin{solution}
 Reflect the quadrilateral about side $AD$, and let $B'$ be the reflection of $B$ and $C'$ that of $C$. 
-Then pentagon $BCDC'D'$ is equilateral. Furthermore, $\angle BCD \cong \angle CDC' \cong DC'B'$, 
-and this construction is uniquely defined. Therefore $\angle BCD$ is an angle in a regular pentagon, 
-so it measures $\boxed{108^\circ}$.
+Then pentagon $BCDC'B'$ is equilateral. Furthermore, $\angle BCD \cong \angle CDC' \cong DC'B'$, 
+and this construction is uniquely defined, so the pentagon is in fact regular. 
+Therefore $\angle BCD$ is an angle in a regular pentagon, so it measures $\boxed{108^\circ}$.
 \end{solution}
 \end{document}
