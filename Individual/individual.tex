@@ -78,18 +78,8 @@ $\boxed{406}$ (dollars)
 
 \begin{solution}
 The total number of dollars Larry receives is $1 + 2 + 3 + \cdots + 28$. We can either compute
-this directly, or use a clever trick by Gauss. Let $S$ be the above sum. Then
-\begin{align*}
-S &= 1\ +\ 2\ +\ 3\ + \cdots + 28 \\
-S &= 28 + 27 + 26 + \cdots + 1 \\
-\end{align*}
-Adding these two equations together gives
-\begin{align*}
-2S &= (1+28) + (2+27) + (3+26) + \cdots + (28+1) \\
-&= 29 + 29 + 29 + \cdots + 29 \\
-&= 28(29),
-\end{align*}
-so $S = 14(29) = \boxed{406}$.
+this directly, or use a clever trick by Gauss. Observe that $1 + 28 = 2 + 27 = 3 + 26 = \cdots = 14 + 15 = 29$.
+Each pair sums to $29$, and there are $14$ of these pairs, so the overall sum is $14(29) = \boxed{406}$.
 \end{solution}
 
 
