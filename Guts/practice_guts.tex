@@ -1,1 +1,169 @@
+\documentclass[11pt]{article}
+%\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+\usepackage[a5paper, landscape]{geometry}
+\usepackage{tikz}
 
+\usepackage{../tjimo}
+%\usepackage[pdftex]{graphicx}
+
+\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\def\solutionone{\comment}
+\def\solutiontwo{\comment}
+\end{comment}
+
+%\newcommand{\sevenpoints}{Time limit: 40 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Practice Guts}}
+
+\begin{document}
+
+\section*{Set 1}
+\begin{problem}
+What is $1-2+3-4+5-6+7-8 + \dots + 19-20$?
+\end{problem}
+
+\begin{answer}
+-10
+\end{answer}
+
+\begin{solution}
+Note that $1-2=3-4=5-6=\dots=19-20=-1$. Since there are 10 of these such terms, we get that the answer is $10\cdot -1 = \boxed{-10}$.
+\end{solution}
+
+\begin{problem}
+What is the area of a triangle with side lengths 13, 14, and 15?
+\end{problem}
+
+\begin{answer}
+84
+\end{answer}
+
+\begin{solution}
+Note that if we drop an altitude to the side with length 14, we form a 5-12-13 right triangle and a 3-4-5 right triangle. The altitude has a height of 12. Thus, the area is $\frac{1}{2}(12)(14) = \boxed{84}$.
+\end{solution}
+
+\begin{problem}
+How many numbers are between 505 and 700, inclusive?
+\end{problem}
+
+\begin{answer}
+196
+\end{answer}
+
+\begin{solution}
+If we subtract 504 from each of the numbers, we get all the numbers from 1 to 196, inclusive. There are 196 of these numbers, so there must have been $\boxed{196}$ numbers in the original set.
+\end{solution}
+
+\begin{problem}
+What is the greatest common factor of 117 and 156?
+\end{problem}
+
+\begin{answer}
+39
+\end{answer}
+
+\begin{solution}
+The greatest common factor of 117 and 156 is the same as the greatest common factor between 117 and $156-117=39$. Since $117=39(3)$, the greatest common factor must be $\boxed{39}$
+\end{solution}
+\newpage
+\section*{Set 2}
+\begin{problem}
+It takes Marbury 1 hour to deliver 6 letters and Madison 3 hours to deliver 60 letters. How many letters can they deliver in an 8 hour work day?
+\end{problem}
+
+\begin{answer}
+208
+\end{answer}
+
+\begin{solution}
+Marbury can deliver $6(8)=48$ letters in 8 hours, and Madison can deliver $\frac{60}{3}(8)=160$ letters in 8 hours. Summing these up yields $\boxed{208}$ letters in an 8 hour work day.
+\end{solution}
+
+\begin{problem}
+In quadrilateral $ABCD$, $\angle DAC = 75^\circ$, $\angle ACB = 40^\circ$, $\angle DBC = 75^\circ$, and $\angle BDC = 25^\circ$. Find the measure of angle $\angle DCA$.
+\end{problem}
+
+\begin{answer}
+$40^\circ$
+\end{answer}
+
+\begin{solution}
+We observe that $\angle DCA = 180^\circ - \angle DBC - \angle ACB - \angle BDC = 40^\circ$.
+\end{solution}
+
+\begin{problem}
+What are the sum of the factors of 16?
+\end{problem}
+
+\begin{answer}
+31
+\end{answer}
+
+\begin{solution}
+Note that the factors of $16=2^4$ are 1, 2, 4, 8, and 16. Summing these yields $31$.
+\end{solution}
+
+\begin{problem}
+There are 100 people in math team. If 53 of them do cross country, 27 of them do art club, and 38 of them do neither, how many do both?
+\end{problem}
+
+\begin{answer}
+18
+\end{answer}
+
+\begin{solution}
+If 38 do neither, then $100-38=62$ must do either art club or cross country. Since $53$ do cross country, only $62-53=9$ must do only art club, leaving $27-9=\boxed{18}$ that do both.
+\end{solution}
+
+\newpage
+\section*{Set 3}
+\begin{problem}
+In a round robin tournament, everyone competes against everyone else. If there are 8 teams, how many matches are there?
+\end{problem}
+
+\begin{answer}
+28
+\end{answer}
+
+\begin{solution}
+If every team plays against everyone else, each team plays against 7 other teams. Since each match has 2 teams playing simultaneously, we have a total of $\frac{(8)(7)}{2}=\boxed{28}$ total matches.
+\end{solution}
+
+\begin{problem}
+If I roll three die, what is the probability the numbers on the three die sum to 16?
+\end{problem}
+
+\begin{answer}
+$\frac{1}{36}$
+\end{answer}
+
+\begin{solution}
+The only ways to sum to $16$ are if I roll $5, 5, 6$, or a $4, 6, 6$. These each have a probability of $\frac{3}{216}$ of occurring. Summing this up, we have the probability that they sum to 16 is equal to $\frac{6}{216} = \boxed{\frac{1}{36}}$
+\end{solution}
+
+\begin{problem}
+I have a rectangle with perimeter 36. What is the maximum possible area of the rectangle?
+\end{problem}
+
+\begin{answer}
+81
+\end{answer}
+
+\begin{solution}
+Let the side lengths of the rectangle be $x$ and $y$. Since the perimeter is 36, we see that $x+y$ is 18. Using the AM-GM inequality, we see that $\dfrac{x+y}{2} \geq \sqrt{xy}$. Thus, the maximum possible value of $xy$, or the area of the rectangle, is $\left(\dfrac{18}{2}\right)^2=\boxed{81}$ 
+\end{solution}
+
+\begin{problem}
+Let $20ABC16$ be a perfect square, with $A$, $B$, and $C$ as digits. What is the three-digit number $ABC$?
+\end{problem}
+
+\begin{answer}
+909
+\end{answer}
+
+\begin{solution}    
+Note that $\sqrt{2000000} = 1000\sqrt{2}$, or about 1414. Let $20ABC16$ be equal to $x^2$. Now, consider perfect squares $\mod$ 100. They must be equal to $16 \mod 4$ and $16 \mod 25$. This leads us to the conclusion that $x$ is either $0$  or $2 \mod 4$, and either $4$ or $21$ mod 25. Thus, the last two digits of $x$ must be either $04, 46, 54,$ or $96$. Note that 1404 is too small, and trying 1446 yields $2090916$, giving us our desired answer of $\boxed{909}$.
+\end{solution}
+
+\end{document}
