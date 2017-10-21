@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{../tjimo}
+%\usepackage[pdftex]{graphicx}
+\usepackage{asymptote}
+\usepackage[none]{hyphenat}
+
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Team Solutions}}
+
+%\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\renewcommand{\righthead}{\fdbox{Round}{Team}}
+%\end{comment}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\begin{problem}
+There are $200$ animals on a farm. Some are chickens and some are horses. If there are $450$ legs in total, how many horses are there?
+(Chickens have two legs each, and horses have four legs each.)
+\end{problem}
+
+\begin{answer}
+25
+\end{answer}
+
+\begin{solution}
+Let $c$ be the number of chickens, and $h$ be the number of horses. We have the following system of equations:
+\begin{equation}
+c+h = 200 \\
+\end{equation}
+\begin{equation}
+2c + 4h = 450
+\end{equation}
+We can multiply equation (1) by 2 to match the coefficient of c, and subtract the result from equation (2) to get $2h = 50$, or $h = \boxed{25}$.
+\end{solution}
+
+
+\begin{problem}
+There are $n$ students in a class. The teacher can divide them evenly into groups of $2$, $3$, $4$, $5$, and $7$. If $1000 < n < 1500$, find $n$.
+\end{problem}
+
+\begin{answer}
+1260
+\end{answer}
+
+\begin{solution}
+We first want to find the least possible number $n$ that divides $2$, $3$, $4$, $5$, and $7$, which is just $\operatorname{lcm}(2, 3, 4, 5, 7)$. 
+We can realize that $4$ divides $2$ evenly, and $3$, $4$, $5$, and $7$ have no common factors, 
+so this is equal to $4 \cdot 3 \cdot 5 \cdot 7 = 420$. Notice that any number $n$ that can be the answer must be a multiple of 
+$420$ in order to be divisible by $2$, $3$, $4$, $5$, and $7$. We see that $\boxed{1260}$ is the multiple of $420$ in our range. 
+\end{solution}
+
+
+\begin{problem}
+An integer is chosen randomly from the first $2017^2$ positive integers. What is the probability that the chosen integer is a perfect square?
+\end{problem}
+\begin{answer}
+$\dfrac{1}{2017}$
+\end{answer}
+\begin{solution}
+Note that between $1$ and $2017^2$ there are $2017$ squares out of a total $2017^2$ positive integers. This gives a probability of $\dfrac{2017}{2017^2} = \boxed{\dfrac{1}{2017}}$
+\end{solution}
+
+
+\begin{problem}
+What is the smallest positive integer that is 
+\begin{itemize}
+    \item greater than $1$
+    \item not prime
+    \item not divisible by $2$, $3$, or $5$?
+\end{itemize}
+\end{problem}
+\begin{answer}
+49
+\end{answer}
+\begin{solution}
+Note that the first integer prime after $2$, $3$, and $5$ is $7$. However, because we cannot have our integer be prime, 
+we have to multiply it by another prime. Again, because it cannot be divisible by $2$, $3$, and $5$, 
+we include another factor of $7$, so our answer is $7 \cdot 7 = \boxed{49}$.
+\end{solution}
+
+
+\begin{problem}
+Point $C$ is the center of the rectangle shown below. If the area of the whole rectangle is $80$, find the area of the shaded region.
+\begin{center}
+\begin{asy}
+size(100);
+draw((0,0)--(3,0)--(3,5)--(0,5)--(0,0));
+draw((3,0)--(1.5, 2.5));
+draw((0,0)--(1.5, 2.5));
+dot((1.5, 2.5));
+label("C", (1.5, 2.5), NE);
+fill((0,0)--(1.5,2.5)--(3,0)--(0,0)--cycle,gray);
+\end{asy}
+\end{center}
+\end{problem}
+\begin{answer}
+20
+\end{answer}
+\begin{solution}
+Let $l$ be the length and $h$ be the height. The height of the triangle is $\dfrac{h}{2}$ because $C$ is the center of the rectangle. 
+$L$ is still the length, so the area of our triangle is $\dfrac{1}{2} \cdot l \cdot \dfrac{h}{2} = \dfrac{l\cdot h}{4} = \boxed{20}$, 
+since $l \cdot h$ is the area of the rectangle, which is $80$.
+\end{solution}
+
+
+\begin{problem}
+A four-digit positive integer $\overline{ABCD}$ is called $\textit{funny}$ if each of its digits is between $1$ and $9$, and both $\overline{ABC}$ and $\overline{BCD}$ are perfect squares. For example, $1441$ is $\textit{funny}$ because $144 = 12^2$ and $441 = 21^2$, but $9009$ is not $\textit{funny}$ because it has zeros as digits. What is the largest four-digit $\textit{funny}$ integer?
+\end{problem}
+
+\begin{answer}
+7841
+\end{answer}
+
+\begin{solution}
+We want to prioritize maximizing the thousands, hundreds, and tens digits because those impact the number more than the units digit. We iterate backward from $31^2$, the largest 3-digit square, backwards. $31^2 = 961$, but no square has the first $2$ digits of $61$. This is also true for $30^2 = 900$, and $29^2 = 841$. However, $28^2 = 784$, and as seen by $29^2$, there is a square with first 2 digits $84$. Thus, our maximized answer is $\boxed{7841}$.
+\end{solution}
+
+
+\begin{problem}
+How many positive two-digit integers are $\dfrac{4}{7}$ of their ``reverse"? (For example, $48$ is $\dfrac{4}{7}$ of $84$, the number formed by swapping the digits of $48$.)
+\end{problem}
+
+\begin{answer}
+4
+\end{answer}
+
+\begin{solution}
+Let our number be $\overline{AB}$. We want numbers such that $7*\overline{AB} = 4*\overline{BA}$. Expanding our number using 
+$\overline{AB} = 10A+B$, we get $66A = 3B$, or $A = 2B$. Because $A$ and $B$ are digits, they are less than $10$, so the total number of 
+solutions is $\boxed{4}$, namely $12$ and $21$, $24$ and $42$, $36$ and $63$, and $48$ and $84$.
+\end{solution}
+
+
+\begin{problem}
+Suppose $x,y$ are positive real numbers such that \[ xy + x^2 = 23 \]  \[ xy + y^2 = 26.\] Compute $x+y$.
+\end{problem}
+
+\begin{answer}
+7
+\end{answer}
+
+\begin{solution}
+Summing these two equations yields $x^2 + 2xy + y^2 = 49$, so $(x+y)^2 = 49$, and since $x$ and $y$ are positive, we conclude $x+y = \boxed{7}$.
+\end{solution}
+
+
+\begin{problem}
+Dan the Doubler has an interesting way of doubling numbers. He takes each digit of a number, doubles it, and then puts the answers together. 
+For example, he ``doubles" $666$ to get $121212$ and ``doubles" $202$ to get $404$. For how many three-digit integers from $100$ to $999$,
+inclusive, does Dan get the correct answer using his doubling method? (For example, $202 \times 2 = 404$ is correct, but $666 \times 2 = 121212$ is incorrect.)
+\end{problem}
+
+\begin{answer}
+25
+\end{answer}
+
+\begin{solution}
+Note that for any digit less than $5$, the double only consists of $1$ digit, so there wouldn't be any overlap. Thus and combination of digits less than $5$ works, so there are $9$ options for the hundreds digit (any number works for the hundreds digit, as the carryover goes freely to the thousands place), $5$ options for the tens digit, and $5$ options for the units digit, yielding a total of $\boxed{225}$ total numbers. 
+\end{solution}
+
+
+\begin{problem}
+The product of the lengths of the three altitudes of a certain triangle is 24. If this triangle has an area of 3, then determine the product of the three side lengths of this triangle.  (The altitudes of a triangle are the line segments connecting the vertices and the feet of the perpendiculars from those vertices to the opposite sides.) % KYLE
+\end{problem}
+
+\begin{answer}
+9
+\end{answer}
+
+\begin{solution}
+Let $a$, $b$, $c$ be the length of the sides of the triangle, and $h_a$, $h_b$, $h_c$ be the lengths of the altitudes of 
+sides $a$, $b$, and $c$ respectively. We know $h_a \cdot h_b \cdot h_c = 24$, and $a \cdot h_a = 6$, $b \cdot h_b = 6$, 
+and $c \cdot h_c = 6$. Multiplying the last 3 equations and dividing by the first equation yields $abc = \boxed{9}$
+\end{solution}
+\end{document}
+
