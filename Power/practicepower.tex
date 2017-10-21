@@ -15,9 +15,12 @@
 
 \renewenvironment{problem}{\begin{problems}}{\end{problems}\vspace{5pt}}
 
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 \begin{document}
 
 \setlength{\parindent}{0pt}
+%\renewcommand{\arraystretch}{1.5}
 
 Unlike the other rounds, just getting the answer right is not enough on the Power Round. 
 Make sure you explain your answer and use words to describe how you arrived at your answer. 
@@ -41,7 +44,7 @@ Determine whether each of the following is a magic square. If it is, determine t
 \begin{figure}[H]
 \centering
 \subfloat[]{
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 1 & 4 \\ \hline
 2 & 3 \\ \hline
@@ -49,7 +52,7 @@ Determine whether each of the following is a magic square. If it is, determine t
 }
 \qquad \qquad
 \subfloat[]{
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 17 & 17 \\ \hline
 17 & 17 \\ \hline
@@ -57,7 +60,7 @@ Determine whether each of the following is a magic square. If it is, determine t
 }
 \qquad \qquad
 \subfloat[]{
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{3}{M{0.6cm}|}}
 \hline
 4 & 2 & 9 \\ \hline
 3 & 7 & 5 \\ \hline
@@ -87,7 +90,7 @@ A \textit{standard} $n \times n$ magic square is one that uses the integers from
 Fill in the missing entries below so that the result is a standard $4 \times 4$ magic square.
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{4}{M{0.6cm}|}}
 \hline
 16 & 2 & 3 & 13 \\ \hline
 \phantom{5} & \phantom{11} & \phantom{10} & \phantom{8} \\ \hline
@@ -110,7 +113,7 @@ Using the last row, the entry in the last row and first column must be $34-14-15
 Using the other long diagonal, the entry in the second row and third column must be $34-13-7-4=10$.
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{4}{M{0.6cm}|}}
 \hline
 16 & 2 & 3 & 13 \\ \hline
 \phantom{5} & 11 & 10 & \phantom{8} \\ \hline
@@ -130,7 +133,7 @@ the third row and first column must be $9$, the entry in the second row and last
 and the entry in the third row and last column must be $12$, giving the completed magic square below.
 
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{4}{M{0.6cm}|}}
 \hline
 16 & 2 & 3 & 13 \\ \hline
 5 & 11 & 10 & 8 \\ \hline
@@ -214,7 +217,7 @@ there are only $2$ such ways, so this is impossible.
 \begin{problem}[4 points]
 Consider the partially-completed $2 \times 2$ \textit{non-standard} magic square.
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 17 & \phantom{17} \\ \hline
  & \\ \hline
@@ -229,7 +232,7 @@ to make the magic sum $17+x$. Using the right column, the magic sum is also $x+x
 $17+x = x+x$, or $x = 17$. Hence the only way to fill in the missing entries is to make all of them $17$.
 
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 17 & 17 \\ \hline
 17 & 17 \\ \hline
@@ -248,7 +251,7 @@ Using the right column, the magic sum is also $x+x$, so $y+x = x+x$, or $y = x$.
 Thus all entries in the magic square are the same.
 
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 $x$ & $x$ \\ \hline
 $x$ & $x$ \\ \hline
@@ -274,7 +277,7 @@ If not, find two rows or two columns with different sums.
 \begin{figure}[H]
 \centering
 \subfloat[]{
-\begin{tabular}{|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{2}{M{0.6cm}|}}
 \hline
 1 & 6 \\ \hline
 5 & 2 \\ \hline
@@ -282,7 +285,7 @@ If not, find two rows or two columns with different sums.
 \end{tabular}
 } \qquad \qquad
 \subfloat[]{
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{| >{\rule[-0.4cm]{0pt}{1cm}} *{3}{M{0.6cm}|}}
 \hline
 4 & 2 & 9 \\ \hline
 3 & 7 & 5 \\ \hline
