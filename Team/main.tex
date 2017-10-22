@@ -1,0 +1,331 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{asymptote}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{float}
+\usepackage[margin=1in]{geometry}
+
+\title{Team Round}
+\author{Akshaj and Michael}
+\date{July 2017}
+
+\begin{document}
+
+\theoremstyle{definition}
+\newtheorem{problems}{Problem}
+\newtheorem*{answer}{Answer}
+\newtheorem*{solution}{Solution}
+\newtheorem*{stat}{Status}
+
+\newenvironment{problem}[1]{\begin{problems}#1}{\end{problems}} 
+\newenvironment{status}{\begin{stat}}{\newline  \end{stat}}
+
+\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\end{comment}
+
+%%% USE THE STATUS SECTION FOR ANY CONCERNS ABOUT PROBLEMS AND ALSO SAY IN WHICH ROUND IT IS BEING USED
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Team Round}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 1
+\begin{problem}
+There are $200$ animals on a farm. Some are chickens and some are horses. If there are $450$ legs in total, how many horses are there?
+(Chickens have two legs each, and horses have four legs each.)
+\end{problem}
+\begin{answer}
+$25$
+\end{answer}
+\begin{solution}
+Let $c$ be the number of chickens, and $h$ be the number of horses. We have the following system of equations:
+\begin{equation}
+c+h = 200 \\
+\end{equation}
+\begin{equation}
+2c + 4h = 450
+\end{equation}
+We can multiply the first equation by 2 to get $2c + 2h = 200$. Since $2c + 4h = 250$, we must have $2h = 50$, or $h = \boxed{25}$.
+
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 2
+\begin{problem}
+There are $n$ children in a class. The teacher can divide them evenly into groups of $2$, $3$, $4$, $5$, and $7$. If $1000 < n < 1500$, find $n$.
+\end{problem}
+\begin{answer}
+$1260$
+\end{answer}
+\begin{solution}
+We first want to find the least possible number $n$ that divides $2$, $3$, $4$, $5$, and $7$. We know that any multiple of $4$ is automatically a multiple of $2$, so we only need to require $n$ to be divisible by $3$, $4$, $5$, and $7$. Since $3,4,5,7$ share no common factors, any such $n$ must be divisible by $3 \cdot 4 \cdot 5 \cdot 7 = 420$. The only multiple of $420$ in our given range is $420 \cdot 3 = \boxed{1260}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 3
+\begin{problem}
+An integer is chosen randomly from the first $2017^2$ positive integers. What is the probability that the chosen integer is a perfect square?
+\end{problem}
+\begin{answer}
+$\dfrac{1}{2017}$
+\end{answer}
+\begin{solution}
+Note that the squares between $1$ and $2017^2$ are \[1^2,\ 2^2,\ 3^2,\ \cdots,\ 2016^2,\ 2017^2\]There are $2017$ of these squares out of a total $2017^2$ positive integers. This gives a probability of $\dfrac{2017}{2017^2} = \boxed{\dfrac{1}{2017}}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 4
+\begin{problem}
+What is the smallest positive integer that is 
+\begin{itemize}
+    \item greater than $1$
+    \item not prime
+    \item not divisible by $2$, $3$, or $5$?
+\end{itemize}
+\end{problem}
+\begin{answer}
+$49$
+\end{answer}
+\begin{solution}
+Any positive integer that is greater than $1$ and not prime must be composite. That means our answer must be the product of two integers greater than $1$. Let our answer be $ab$, with $a,b > 1$. We notice that if either $a$ or $b$ is one of $2, 3, 4, 5, 6$, then the product would be divisible by $2$, $3$, or $5$, which is not allowed. Thus, $a, b \ge 7$ and our smallest possible integer satisfying the conditions is $7 \cdot 7 = \boxed{49}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 5
+\begin{problem}
+Point $C$ is the center of the rectangle shown below. If the area of the whole rectangle is $80$, find the area of the shaded region.
+\begin{center}
+\begin{asy}
+size(100);
+draw((0,0)--(3,0)--(3,5)--(0,5)--(0,0));
+draw((3,0)--(1.5, 2.5));
+draw((0,0)--(1.5, 2.5));
+dot((1.5, 2.5));
+label("C", (1.5, 2.5), NE);
+fill((0,0)--(1.5,2.5)--(3,0)--(0,0)--cycle,gray);
+\end{asy}
+\end{center}
+\end{problem}
+\begin{answer}
+$20$
+\end{answer}
+\begin{solution}
+Extend the lines in the diagram as such: 
+\begin{center}
+\begin{asy}
+size(100);
+draw((0,0)--(3,0)--(3,5)--(0,5)--(0,0));
+fill((0,0)--(1.5,2.5)--(3,0)--(0,0)--cycle,gray);
+draw((3,0)--(0, 5));
+draw((0,0)--(3, 5));
+draw((0,2.5)--(3, 2.5));
+draw((1.5,0)--(1.5, 5));
+dot((1.5, 2.5));
+label("C", (1.5, 2.5), NE);
+
+\end{asy}
+\end{center}
+We divided the rectangle into eight congruent triangles, two of which are shaded. Thus $\dfrac{1}{4}$ of the total area is shaded, so our answer is $80 \cdot \dfrac14 = \boxed{20}.$
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 6
+\begin{problem}
+A four-digit positive integer $\overline{ABCD}$ is called $\textit{funny}$ if each of its digits is between $1$ and $9$, and both $\overline{ABC}$ and $\overline{BCD}$ are perfect squares. For example, $1441$ is $\textit{funny}$ because $144 = 12^2$ and $441 = 21^2$, but $9009$ is not $\textit{funny}$ because it has zeros as digits. What is the largest four-digit $\textit{funny}$ integer?
+
+\end{problem}
+\begin{answer}
+$7841$
+\end{answer}
+\begin{solution}
+We will check all possible three-digit squares $\overline{ABC}$ in descending order, and for each square we will check whether the last two digits could be the first two digits in another three-digit square. $31^2 = 961$ does not work because there is no three digit square between $611$ and $619$. $30^2 = 900$ has zeros, so it cannot be part of a $\textit{funny}$ integer. $29^2 = 841$ does not work because there is no square between $411$ and $419$. Finally, $28^2 = 784$ works because $29^2 = 841$ starts with the digits ``84". Our largest $\textit{funny}$ integer is therefore $\boxed{7841}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 7
+\begin{problem}
+How many two-digit numbers are $\dfrac{4}{7}$ of their ``reverse"? (For example, $48$ is $\dfrac{4}{7}$ of $84$, the number formed by swapping the digits of $48$.)
+\end{problem}
+\begin{answer}
+$4$
+\end{answer}
+\begin{solution}
+Let one such two-digit number be $\overline{AB}$. We are given $7*\overline{AB} = 4*\overline{BA}$. Notice that we can write $\overline{AB} = 10A+B$ and $\overline{BA} = 10B + A$. This gives us $7(10A + B) = 4(10B + A)$. Expanding and simplifying, we get $66A = 33B$, or $2A = B$. This gives us the solutions $(A, B) = (1, 2), (2, 4), (3, 6), (4, 8)$. Notice we omit the pairs $(0, 0)$ and $(5, 10)$ because they would not result in two-digit numbers. Our four ordered pairs correspond to the two digit numbers $12, 24, 36, 48$. Thus, there are $\boxed{4}$ such two-digit numbers. 
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 8
+\begin{problem}
+Suppose $x,y$ are positive real numbers such that \[ xy + x^2 = 23 \]  \[ xy + y^2 = 26.\] Compute $x+y$.
+\end{problem}
+\begin{answer}
+$7$
+\end{answer}
+\begin{solution}
+Summing these two equations yields $x^2 + 2xy + y^2 = 49$, or $(x+y)^2 = 49$. Thus, because $x$ and $y$ are positive, $x+y = \boxed{7}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROBLEM 9
+\begin{problem}
+Dan the Doubler has an interesting way of doubling numbers. He takes each digit of a number, doubles it, and then puts the answers together. For example, he doubles $666$ to get $121212$ and doubles $202$ to get $404$. For how many three-digit integers from $100$ to $999$, inclusive does Dan get the correct answer using his doubling method? (For example, $202 \times 2 = 404$ is correct, but $666 \times 2 = 121212$ is incorrect.)
+\end{problem}
+\begin{answer}
+$225$
+\end{answer}
+\begin{solution}
+Notice that Dan the Doubler's doubling method works if and only if there are no carries necessary when adding the number to itself. The digits $\{0, 1, 2, 3, 4\}$ are the only digits which do not require a carry when added to themselves. Thus, the tens and ones digit of the three digit number must be one of these five digits. The hundreds digit, however, can be any non-zero digit. (To understand why, notice how when doubling $944$ or $833$, no carries are necessary.) Since there are $5$ possibilities for each of the tens and ones digits, and $9$ for the hundreds digit, our answer is $5 \cdot 5 \cdot 9 = \boxed{225}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PROBLEM 10
+\begin{problem}
+The product of the lengths of the three altitudes of a certain triangle is 24. If this triangle has an area of 3, then determine the product of the three side lengths of this triangle.  (The altitudes of a triangle are the line segments connecting each vertex to the opposite side at a right angle.) % KYLE
+\end{problem}
+\begin{answer}
+$9$
+\end{answer}
+\begin{solution}
+Let $a$, $b$, $c$ be the length of the sides of the triangle, and $h_a$, $h_b$, $h_c$ be the lengths of the altitudes of sides $a$, $b$, and $c$ respectively. We know $h_a \cdot h_b \cdot h_c = 24$. We also know that the area of the triangle is $3 = \dfrac12 \cdot a \cdot h_a = \dfrac12 \cdot b \cdot h_b = \dfrac12 \cdot c \cdot h_c$, so $ah_a = bh_b = ch_c = 6$. Thus, $(ah_a)(bh_b)(ch_c) = abc \cdot h_ah_bh_c = 6^3 = 216$, so $abc = \dfrac{216}{h_ah_bh_c} = \dfrac{216}{24} = \boxed{9}$.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% PRACTICE TEAM BELOW:
+
+% PROBLEM 1
+\begin{problem}
+Martha is making a banana shake using a recipe she found online. The recipe involves $2$ cups of water and $3$ bananas and produces $2$ liters of banana shake. If Martha wants to make $6$ liters of banana shake, how many bananas does she need?
+\end{problem}
+\begin{answer}
+$9$
+\end{answer}
+\begin{solution}
+Because we need $6$ liters of shake and the recipe produces $2$ liters, we need to use $6/2 = 3$ times as much water and $3$ times as many bananas. Thus we need $3*3 = \boxed{9}$ bananas. 
+\end{solution}
+
+% PROBLEM 2
+\begin{problem}
+Michael wants to tile his $6$ feet by $10$ feet floor with $4$-inch by $3$-inch tiles. How many tiles does he need? (There are $12$ inches in a foot).
+\end{problem}
+\begin{answer}
+720
+\end{answer}
+\begin{solution}
+The total square footage of the floor is $60$ square feet. Each tile is $\dfrac{1}{3}$ feet by $\dfrac{1}{4}$ feet, with a total area of $\dfrac{1}{12}$ square feet. Thus we need $\frac{60}{1/12} = \boxed{720}$.
+\end{solution}
+
+% PROBLEM 3
+
+\begin{problem}
+We know that $15 = 5 + 5 + 5$, $16 = 4 + 4 + 4 + 4$, and $17 = 5 + 4 + 4 + 4$. What is the largest positive integer that cannot be expressed as the sum of $4$s and $5$s? 
+\end{problem}
+\begin{answer}
+$11$
+\end{answer}
+\begin{solution}
+We see that $15$, $16$, and $17$ can all be expressed as the sum of $4$s and $5$s. We can also check that $14 = 5 + 5 + 4$, $13 = 5 + 4 + 4$, and $12 = 4 + 4 + 4$. However, there is no way to express $11$ as the sum of $4$s and $5$s. To prove that $11$ is the largest such integer, notice that any positive integer greater than $11$ can be formed by repeatedly adding $4$ to one of $\{12, 13, 14, 15\}$. Thus, $\boxed{11}$ is the largest such positive integer.
+\end{solution}
+
+
+% PROBLEM 4
+\begin{problem}
+If $m$ and $n$ are positive integers satisfying $m^2-n^2 = 28$ and $mn=48$, then what is $m^2+n^2$?
+\end{problem}
+\begin{answer}
+$100$
+\end{answer}
+\begin{solution}
+By guessing and checking, we can find $m=8$ and $n=6$, so $8^2 + 6^2 = 100$. Alternatively, notice $(m^2 - n^2)^2 + 4(mn)^2 = (m^2 + n^2)^2 $, so $28^2 + 4(48)^2 = (m^2+n^2)^2$. Thus, $(m^2+n^2)^2 = 10000$, and since $m,n$ are positive integers, $m^2+n^2 = \sqrt{10000} = \boxed{100}$.
+\end{solution}
+% PROBLEM 5
+\begin{problem}
+William has a jar of jellybeans. If he splits them into groups of $6$, he has $1$ jellybean left. If he splits them into groups of $11$, he has $6$ jelly beans left. What is the minimum number of jellybeans William has?
+\end{problem}
+\begin{answer}
+$61$
+\end{answer}
+\begin{solution}
+Suppose we give William $5$ more jellybeans. Then he would be able to evenly split his jellybeans into groups of $6$ or $11$. Thus, he must now have a number of jellybeans that is divisible by $6$ and $11$. The smallest such number is $66$. Thus, originally the minimum possible number of jellybeans William could have had is $66 - 5 = \boxed{61}$.
+\end{solution}
+% PROBLEM 6
+
+\begin{problem}
+After playing a game together, Justin and Joshua calculate each of their scores and the winner is the individual with the higher score. Justin's score is equivalent to $1+3+5+\cdots+999$ while Joshua's score is equal to $2+4+6+\cdots+1000$. How many more points did the winner have than the loser? 
+\end{problem}
+\begin{answer}
+500
+\end{answer}
+\begin{solution}
+First, notice that each player had a total of $500$ numbers. Additionally, each of Joshua's numbers was $1$ greater than that of Justins. ($2 - 1 = 1,\ 4 - 3 = 1,\ 6 - 5 = 1, $ etc.) That means that Joshua won by $500*1 = \boxed{500}$ points.
+\end{solution}
+% PROBLEM 7
+\begin{problem}
+How many different ways are there to scramble the letters in RACER? One way is ``ACERR'' and another is ``RACER''.
+\end{problem}
+\begin{answer}
+60
+\end{answer}
+\begin{solution}
+There are five ways to choose what place to put the $A$, four ways to choose what place to put the $C$, and three ways to choose what place to put the $E$. Then, the remaining letters are $R$. Thus, our answer is $5 \cdot 4 \cdot 3 = \boxed{60}$.
+\end{solution}
+% PROBLEM 8
+\begin{problem}
+Jeffery draws triangle A and draws the midpoint of each side. He then connects the three midpoints to form another triangle, B. Jeffery repeats this process for the new smaller triangle to obtain triangle C. What is the ratio of the area of triangle C to triangle A? 
+\end{problem}
+\begin{answer}
+$\dfrac{1}{16}$
+\end{answer}
+\begin{solution}
+It is well known that the connection of the midpoints of a triangle forms another triangle with $\dfrac{1}{4}$ of the area of the original. This implies that the area of B is $\dfrac{1}{4}$ of the area of A, and the area of C is $\dfrac{1}{4}$ of the area of B. Thus, the area of C is $\dfrac14 \cdot \dfrac14 = \boxed{\dfrac{1}{16}}$ of the area of A. 
+\end{solution}
+% PROBLEM 9
+
+
+\begin{problem}
+Jonathan has two bags of marbles. In the first bag, there are 3 red marbles and 5 blue marbles. In the second bag, there are 4 red marbles and 7 blue marbles. What is the probability that Jonathan picks a blue marble from the first bag and a red marble from the second bag?
+\end{problem}
+\begin{answer}
+$\dfrac{5}{22}$
+\end{answer}
+\begin{solution}
+The probability of picking a blue from the first bag is $\dfrac{5}{8}$, while the probability of picking a red from the second is $\dfrac{4}{11}$, so the probability of both of these events occuring is $\dfrac{5}{8} \cdot \dfrac{4}{11} = \boxed{\dfrac{5}{22}}$
+\end{solution}
+%\begin{problem}
+%William has a jar of jellybeans. If he splits them into groups of 6, he has 1 jellybean left. If he splits them into groups of 11, he has 6 jelly beans left. What is the minimum number of jellybeans William has?
+%\end{problem}
+
+
+
+%\begin{problem}
+%If $x^2-y^2 = 42$ and $xy=28$, then what is $x^2+y^2$?
+%\end{problem}
+
+\begin{problem}
+Square $ABCD$ has side length $1$. Let $M$ be the midpoint of side $\overline{AB}$, and let the line segments $\overline{DB}$ and $\overline{CM}$ intersect at point $E$ inside the square. Determine the area of $\triangle BCE$. Express your answer as a common fraction.
+\end{problem}
+
+\begin{answer}
+$\dfrac{1}{6}$
+\end{answer}
+
+\begin{solution}
+Note that triangles $\triangle MBE$ and $\triangle CDE$ are similar by $AA$ similarity (because $MB$ is parallel to $CD$). Since $\dfrac{MB}{CD} = \dfrac{1}{2}$, $\dfrac{BE}{DE} = \dfrac{1}{2}$. Notice that since both $\triangle BEC$ and $\triangle DEC$ have the same height with respect to sides $BE$ and $DE$, so the ratio of their areas is the same as the ratio of $BE$ to $DE$, which is $\dfrac12$. Since $\triangle DEC$ is twice the area of $\triangle BEC$, we know that $\triangle DBC$ is three times the area of $\triangle BEC$. The area of $\triangle DBC$ is just half the total area, or $\dfrac{1}{2}$, so the area of $\triangle BCE$ is $\dfrac{1}{3} \cdot \dfrac{1}{2} = \boxed{\dfrac{1}{6}}$.
+\end{solution}
+
+\end{document}

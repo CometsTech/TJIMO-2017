@@ -1,0 +1,152 @@
+\documentclass[11pt]{article}
+\usepackage[paperwidth=8.5in, paperheight=11in]{geometry}
+
+\usepackage{../tjimo}
+%\usepackage[pdftex]{graphicx}
+\usepackage{asymptote}
+\usepackage[none]{hyphenat}
+
+\newcommand{\sevenpoints}{Time limit: 30 minutes.}
+\newcommand{\righthead}{\fdbox{Round}{Practice Team Solutions}}
+
+%\begin{comment}
+\def\answer{\comment}
+\def\solution{\comment}
+\renewcommand{\righthead}{\fdbox{Round}{Practice Team}}
+%\end{comment}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+
+\begin{problem}
+Martha is making a banana shake using a recipe she found online. The recipe involves $2$ cups of water and $3$ bananas and produces $2$ liters of banana shake. If Martha wants to make $6$ liters of banana shake, how many bananas does she need?
+\end{problem}
+
+\begin{answer}
+$9$
+\end{answer}
+
+\begin{solution}
+Because we need $6$ liters of shake and the recipe produces $2$ liters, we need to use $6/2 = 3$ times as much water and $3$ times as many bananas. Thus we need $3*3 = \boxed{9}$ bananas. 
+\end{solution}
+
+
+\begin{problem}
+Michael wants to tile his $6$ feet by $10$ feet floor with $4$-inch by $3$-inch tiles. How many tiles does he need? (There are $12$ inches in a foot).
+\end{problem}
+
+\begin{answer}
+$720$
+\end{answer}
+
+\begin{solution}
+The total square footage of the floor is $60$ square feet. Each tile is $\dfrac{1}{3}$ feet by $\dfrac{1}{4}$ feet, with a total area of $\dfrac{1}{12}$ square feet. Thus we need $\frac{60}{1/12} = \boxed{720}$.
+\end{solution}
+
+
+\begin{problem}
+We know that $15 = 5 + 5 + 5$, $16 = 4 + 4 + 4 + 4$, and $17 = 5 + 4 + 4 + 4$. What is the largest positive integer that cannot be expressed as the sum of $4$s and $5$s? 
+\end{problem}
+\begin{answer}
+$11$
+\end{answer}
+\begin{solution}
+We see that $15$, $16$, and $17$ can all be expressed as the sum of $4$s and $5$s. We can also check that $14 = 5 + 5 + 4$, $13 = 5 + 4 + 4$, and $12 = 4 + 4 + 4$. However, there is no way to express $11$ as the sum of $4$s and $5$s. To prove that $11$ is the largest such integer, notice that any positive integer greater than $11$ can be formed by repeatedly adding $4$ to one of $\{12, 13, 14, 15\}$. Thus, $\boxed{11}$ is the largest such positive integer.
+\end{solution}
+
+
+\begin{problem}
+If $m$ and $n$ are positive integers satisfying $m^2-n^2 = 28$ and $mn=48$, then what is $m^2+n^2$?
+\end{problem}
+\begin{answer}
+$100$
+\end{answer}
+\begin{solution}
+By guessing and checking, we can find $m=8$ and $n=6$, so $8^2 + 6^2 = 100$. Alternatively, notice $(m^2 - n^2)^2 + 4(mn)^2 = (m^2 + n^2)^2 $, so $28^2 + 4(48)^2 = (m^2+n^2)^2$. Thus, $(m^2+n^2)^2 = 10000$, and since $m,n$ are positive integers, $m^2+n^2 = \sqrt{10000} = \boxed{100}$.
+\end{solution}
+
+
+\begin{problem}
+William has a jar of jellybeans. If he splits them into groups of $6$, he has $1$ jellybean left. If he splits them into groups of $11$, he has $6$ jelly beans left. What is the minimum number of jellybeans William has?
+\end{problem}
+\begin{answer}
+$61$
+\end{answer}
+\begin{solution}
+Suppose we give William $5$ more jellybeans. Then he would be able to evenly split his jellybeans into groups of $6$ or $11$. Thus, he must now have a number of jellybeans that is divisible by $6$ and $11$. The smallest such number is $66$. Thus, originally the minimum possible number of jellybeans William could have had is $66 - 5 = \boxed{61}$.
+\end{solution}
+
+
+\begin{problem}
+After playing a game together, Justin and Joshua calculate each of their scores and the winner is the individual with the higher score. Justin's score is equivalent to $1+3+5+\cdots+999$ while Joshua's score is equal to $2+4+6+\cdots+1000$. How many more points did the winner have than the loser? 
+\end{problem}
+
+\begin{answer}
+$500$
+\end{answer}
+
+\begin{solution}
+First, notice that each player had a total of $500$ numbers.
+Additionally, each of Joshua's numbers was $1$ greater than that of Justin's. ($2 - 1 = 1,\ 4 - 3 = 1,\ 6 - 5 = 1, $ etc.) 
+That means that Joshua won by $500*1 = \boxed{500}$ points.
+\end{solution}
+
+
+\begin{problem}
+How many different ways are there to scramble the letters in RACER? One way is ``ACERR'' and another is ``RACER''.
+\end{problem}
+
+\begin{answer}
+$60$
+\end{answer}
+
+\begin{solution}
+There are five ways to choose what place to put the $A$, four ways to choose what place to put the $C$, and three ways to choose what place to put the $E$. Then, the remaining letters are $R$. Thus, our answer is $5 \cdot 4 \cdot 3 = \boxed{60}$.
+\end{solution}
+
+
+\begin{problem}
+Jeffery draws triangle $A$ and draws the midpoint of each side. 
+He then connects the three midpoints to form another triangle, $B$.
+Jeffery repeats this process for the new smaller triangle to obtain triangle $C$. 
+What is the ratio of the area of triangle $C$ to the area of triangle $A$? 
+\end{problem}
+
+\begin{answer}
+$\dfrac{1}{16}$
+\end{answer}
+
+\begin{solution}
+It is well known that the connection of the midpoints of a triangle forms another triangle with $\dfrac{1}{4}$ of the area of the original. 
+This implies that the area of $B$ is $\dfrac{1}{4}$ of the area of $A$, and the area of $C$ is $\dfrac{1}{4}$ of the area of $B$. 
+Thus, the area of $C$ is $\dfrac{1}{4} \cdot \dfrac{1}{4} = \boxed{\dfrac{1}{16}}$ of the area of $A$. 
+\end{solution}
+
+
+\begin{problem}
+Jonathan has two bags of marbles. In the first bag, there are 3 red marbles and 5 blue marbles. In the second bag, there are 4 red marbles and 7 blue marbles. What is the probability that Jonathan picks a blue marble from the first bag and a red marble from the second bag?
+\end{problem}
+
+\begin{answer}
+$\dfrac{5}{22}$
+\end{answer}
+
+\begin{solution}
+The probability of picking a blue from the first bag is $\dfrac{5}{8}$, while the probability of picking a red from the second is $\dfrac{4}{11}$, 
+so the probability of both of these events occurring is $\dfrac{5}{8} \cdot \dfrac{4}{11} = \boxed{\dfrac{5}{22}}$.
+\end{solution}
+
+
+\begin{problem}
+Square $ABCD$ has side length $1$. Let $M$ be the midpoint of side $\overline{AB}$, and let the line segments $\overline{DB}$ and $\overline{CM}$ intersect at point $E$ inside the square. Determine the area of $\triangle BCE$. Express your answer as a common fraction.
+\end{problem}
+
+\begin{answer}
+$\dfrac{1}{6}$
+\end{answer}
+
+\begin{solution}
+Note that triangles $\triangle MBE$ and $\triangle CDE$ are similar by $AA$ similarity (because $MB$ is parallel to $CD$). Since $\dfrac{MB}{CD} = \dfrac{1}{2}$, $\dfrac{BE}{DE} = \dfrac{1}{2}$. Notice that since both $\triangle BEC$ and $\triangle DEC$ have the same height with respect to sides $BE$ and $DE$, so the ratio of their areas is the same as the ratio of $BE$ to $DE$, which is $\dfrac12$. Since $\triangle DEC$ is twice the area of $\triangle BEC$, we know that $\triangle DBC$ is three times the area of $\triangle BEC$. The area of $\triangle DBC$ is just half the total area, or $\dfrac{1}{2}$, so the area of $\triangle BCE$ is $\dfrac{1}{3} \cdot \dfrac{1}{2} = \boxed{\dfrac{1}{6}}$.
+\end{solution}
+\end{document}
+

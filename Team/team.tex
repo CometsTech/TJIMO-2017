@@ -24,7 +24,7 @@ There are $200$ animals on a farm. Some are chickens and some are horses. If the
 \end{problem}
 
 \begin{answer}
-25
+$25$
 \end{answer}
 
 \begin{solution}
@@ -35,7 +35,7 @@ c+h = 200 \\
 \begin{equation}
 2c + 4h = 450
 \end{equation}
-We can multiply equation (1) by 2 to match the coefficient of c, and subtract the result from equation (2) to get $2h = 50$, or $h = \boxed{25}$.
+We can multiply the first equation by 2 to get $2c + 2h = 200$. Since $2c + 4h = 250$, we must have $2h = 50$, or $h = \boxed{25}$.
 \end{solution}
 
 
@@ -44,14 +44,14 @@ There are $n$ students in a class. The teacher can divide them evenly into group
 \end{problem}
 
 \begin{answer}
-1260
+$1260$
 \end{answer}
 
 \begin{solution}
-We first want to find the least possible number $n$ that divides $2$, $3$, $4$, $5$, and $7$, which is just $\operatorname{lcm}(2, 3, 4, 5, 7)$. 
-We can realize that $4$ divides $2$ evenly, and $3$, $4$, $5$, and $7$ have no common factors, 
-so this is equal to $4 \cdot 3 \cdot 5 \cdot 7 = 420$. Notice that any number $n$ that can be the answer must be a multiple of 
-$420$ in order to be divisible by $2$, $3$, $4$, $5$, and $7$. We see that $\boxed{1260}$ is the multiple of $420$ in our range. 
+We first want to find the least possible number $n$ that divides $2$, $3$, $4$, $5$, and $7$. 
+We know that any multiple of $4$ is automatically a multiple of $2$, so we only need to require $n$ to be divisible by $3$, $4$, $5$, and $7$. 
+Since $3,4,5,7$ share no common factors, any such $n$ must be divisible by $3 \cdot 4 \cdot 5 \cdot 7 = 420$. 
+The only multiple of $420$ in our given range is $420 \cdot 3 = \boxed{1260}$.
 \end{solution}
 
 
@@ -62,7 +62,9 @@ An integer is chosen randomly from the first $2017^2$ positive integers. What is
 $\dfrac{1}{2017}$
 \end{answer}
 \begin{solution}
-Note that between $1$ and $2017^2$ there are $2017$ squares out of a total $2017^2$ positive integers. This gives a probability of $\dfrac{2017}{2017^2} = \boxed{\dfrac{1}{2017}}$
+Note that the squares between $1$ and $2017^2$ are \[1^2,\ 2^2,\ 3^2,\ \cdots,\ 2016^2,\ 2017^2.\]
+There are $2017$ of these squares out of a total $2017^2$ positive integers. 
+This gives a probability of $\dfrac{2017}{2017^2} = \boxed{\dfrac{1}{2017}}$.
 \end{solution}
 
 
@@ -75,12 +77,13 @@ What is the smallest positive integer that is
 \end{itemize}
 \end{problem}
 \begin{answer}
-49
+$49$
 \end{answer}
 \begin{solution}
-Note that the first integer prime after $2$, $3$, and $5$ is $7$. However, because we cannot have our integer be prime, 
-we have to multiply it by another prime. Again, because it cannot be divisible by $2$, $3$, and $5$, 
-we include another factor of $7$, so our answer is $7 \cdot 7 = \boxed{49}$.
+Any positive integer that is greater than $1$ and not prime must be composite. 
+That means our answer must be the product of two integers greater than $1$. Let our answer be $ab$, with $a,b > 1$. 
+We notice that if either $a$ or $b$ is one of $2, 3, 4, 5, 6$, then the product would be divisible by $2$, $3$, or $5$, which is not allowed. 
+Thus, $a, b \ge 7$ and our smallest possible integer satisfying the conditions is $7 \cdot 7 = \boxed{49}$.
 \end{solution}
 
 
@@ -99,12 +102,25 @@ fill((0,0)--(1.5,2.5)--(3,0)--(0,0)--cycle,gray);
 \end{center}
 \end{problem}
 \begin{answer}
-20
+$20$
 \end{answer}
 \begin{solution}
-Let $l$ be the length and $h$ be the height. The height of the triangle is $\dfrac{h}{2}$ because $C$ is the center of the rectangle. 
-$L$ is still the length, so the area of our triangle is $\dfrac{1}{2} \cdot l \cdot \dfrac{h}{2} = \dfrac{l\cdot h}{4} = \boxed{20}$, 
-since $l \cdot h$ is the area of the rectangle, which is $80$.
+Extend the lines in the diagram as such: 
+\begin{center}
+\begin{asy}
+size(100);
+draw((0,0)--(3,0)--(3,5)--(0,5)--(0,0));
+fill((0,0)--(1.5,2.5)--(3,0)--(0,0)--cycle,gray);
+draw((3,0)--(0, 5));
+draw((0,0)--(3, 5));
+draw((0,2.5)--(3, 2.5));
+draw((1.5,0)--(1.5, 5));
+dot((1.5, 2.5));
+label("C", (1.5, 2.5), NE);
+\end{asy}
+\end{center}
+We divided the rectangle into eight congruent triangles, two of which are shaded. 
+Thus $\dfrac{1}{4}$ of the total area is shaded, so our answer is $80 \cdot \dfrac14 = \boxed{20}.$
 \end{solution}
 
 
@@ -113,11 +129,11 @@ A four-digit positive integer $\overline{ABCD}$ is called $\textit{funny}$ if ea
 \end{problem}
 
 \begin{answer}
-7841
+$7841$
 \end{answer}
 
 \begin{solution}
-We want to prioritize maximizing the thousands, hundreds, and tens digits because those impact the number more than the units digit. We iterate backward from $31^2$, the largest 3-digit square, backwards. $31^2 = 961$, but no square has the first $2$ digits of $61$. This is also true for $30^2 = 900$, and $29^2 = 841$. However, $28^2 = 784$, and as seen by $29^2$, there is a square with first 2 digits $84$. Thus, our maximized answer is $\boxed{7841}$.
+We will check all possible three-digit squares $\overline{ABC}$ in descending order, and for each square we will check whether the last two digits could be the first two digits in another three-digit square. $32^2 = 961$ does not work because there is no three digit square between $611$ and $619$. $30^2 = 900$ has zeros, so it cannot be part of a $\textit{funny}$ integer. $29^2 = 841$ does not work because there is no square between $411$ and $419$. Finally, $28^2 = 784$ works because $29^2 = 841$ starts with the digits ``84". Our largest $\textit{funny}$ integer is therefore $\boxed{7841}$.
 \end{solution}
 
 
@@ -126,13 +142,11 @@ How many positive two-digit integers are $\dfrac{4}{7}$ of their ``reverse"? (Fo
 \end{problem}
 
 \begin{answer}
-4
+$4$
 \end{answer}
 
 \begin{solution}
-Let our number be $\overline{AB}$. We want numbers such that $7*\overline{AB} = 4*\overline{BA}$. Expanding our number using 
-$\overline{AB} = 10A+B$, we get $66A = 3B$, or $A = 2B$. Because $A$ and $B$ are digits, they are less than $10$, so the total number of 
-solutions is $\boxed{4}$, namely $12$ and $21$, $24$ and $42$, $36$ and $63$, and $48$ and $84$.
+Let one such two-digit number be $\overline{AB}$. We are given $7*\overline{AB} = 4*\overline{BA}$. Notice that we can write $\overline{AB} = 10A+B$ and $\overline{BA} = 10B + A$. This gives us $7(10A + B) = 4(10B + A)$. Expanding and simplifying, we get $66A = 33B$, or $2A = B$. This gives us the solutions $(A, B) = (1, 2), (2, 4), (3, 6), (4, 8)$. Notice we omit the pairs $(0, 0)$ and $(5, 10)$ because they would not result in two-digit numbers. Our four ordered pairs correspond to the two digit numbers $12, 24, 36, 48$. Thus, there are $\boxed{4}$ such two-digit numbers. 
 \end{solution}
 
 
@@ -141,7 +155,7 @@ Suppose $x,y$ are positive real numbers such that \[ xy + x^2 = 23 \]  \[ xy + y
 \end{problem}
 
 \begin{answer}
-7
+$7$
 \end{answer}
 
 \begin{solution}
@@ -160,7 +174,7 @@ inclusive, does Dan get the correct answer using his doubling method? (For examp
 \end{answer}
 
 \begin{solution}
-Note that for any digit less than $5$, the double only consists of $1$ digit, so there wouldn't be any overlap. Thus and combination of digits less than $5$ works, so there are $9$ options for the hundreds digit (any number works for the hundreds digit, as the carryover goes freely to the thousands place), $5$ options for the tens digit, and $5$ options for the units digit, yielding a total of $\boxed{225}$ total numbers. 
+Notice that Dan the Doubler's doubling method works if and only if there are no carries necessary when adding the number to itself. The digits $\{0, 1, 2, 3, 4\}$ are the only digits which do not require a carry when added to themselves. Thus, the tens and ones digit of the three digit number must be one of these five digits. The hundreds digit, however, can be any non-zero digit. (To understand why, notice how when doubling $944$ or $833$, no carries are necessary.) Since there are $5$ possibilities for each of the tens and ones digits, and $9$ for the hundreds digit, our answer is $5 \cdot 5 \cdot 9 = \boxed{225}$.
 \end{solution}
 
 
@@ -169,13 +183,11 @@ The product of the lengths of the three altitudes of a certain triangle is 24. I
 \end{problem}
 
 \begin{answer}
-9
+$9$
 \end{answer}
 
 \begin{solution}
-Let $a$, $b$, $c$ be the length of the sides of the triangle, and $h_a$, $h_b$, $h_c$ be the lengths of the altitudes of 
-sides $a$, $b$, and $c$ respectively. We know $h_a \cdot h_b \cdot h_c = 24$, and $a \cdot h_a = 6$, $b \cdot h_b = 6$, 
-and $c \cdot h_c = 6$. Multiplying the last 3 equations and dividing by the first equation yields $abc = \boxed{9}$
+Let $a$, $b$, $c$ be the length of the sides of the triangle, and $h_a$, $h_b$, $h_c$ be the lengths of the altitudes of sides $a$, $b$, and $c$ respectively. We know $h_a \cdot h_b \cdot h_c = 24$. We also know that the area of the triangle is $3 = \dfrac12 \cdot a \cdot h_a = \dfrac12 \cdot b \cdot h_b = \dfrac12 \cdot c \cdot h_c$, so $ah_a = bh_b = ch_c = 6$. Thus, $(ah_a)(bh_b)(ch_c) = abc \cdot h_ah_bh_c = 6^3 = 216$, so $abc = \dfrac{216}{h_ah_bh_c} = \dfrac{216}{24} = \boxed{9}$.
 \end{solution}
 \end{document}
 
