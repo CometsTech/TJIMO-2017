@@ -25,15 +25,15 @@
 
 \section*{Set 1}
 \begin{problem}
-What is $1-2+3-4+5-6+7-8 + \dots + 19-20$?
+What is $1-2+3-4+5-6+7-8 + \dots + 199 - 200$?
 \end{problem}
 
 \begin{answer}
--10
+-100
 \end{answer}
 
 \begin{solution}
-Note that $1-2=3-4=5-6=\dots=19-20=-1$. Since there are 10 of these such terms, we get that the answer is $10\cdot -1 = \boxed{-10}$.
+Note that $1-2=3-4=5-6=\dots=199-200=-1$. Since there are $100$ of these such terms, we get that the answer is $100\cdot -1 = \boxed{-100}$.
 \end{solution}
 
 \begin{problem}
@@ -136,7 +136,7 @@ If every team plays against everyone else, each team plays against 7 other teams
 \end{solution}
 
 \begin{problem}
-If I roll three die, what is the probability the numbers on the three die sum to 16?
+If I roll three dice, what is the probability the numbers on the three die sum to 16?
 \end{problem}
 
 \begin{answer}
@@ -168,7 +168,9 @@ Let $20ABC16$ be a perfect square, with $A$, $B$, and $C$ as digits. What is the
 \end{answer}
 
 \begin{solution}    
-Note that $\sqrt{2000000} = 1000\sqrt{2}$, or about 1414. Let $20ABC16$ be equal to $x^2$. We will now use modular arithmetic. $20ABC16$ is congruent to $16 \pmod 100$, so it must be congruent to to $16 \equiv 0 \pmod 4$ and $16 \pmod 25$. This leads us to the conclusion that $x$ is either $0$  or $2 \mod 4$, and either $4$ or $21 \mod 25$. Thus, the last two digits of $x$ must be either $04, 46, 54,$ or $96$. Note that $1404$ is too small, and trying $1446$ yields $2090916$, giving us our desired answer of $\boxed{909}$.
+Note that $\sqrt{2000000} = 1000\sqrt{2}$, or about 1414. Let $20ABC16$ be equal to $x^2$. We will now use modular arithmetic. 
+$20ABC16$ is congruent to $16 \pmod{100}$, so it must be congruent to to $16 \equiv 0 \pmod{4}$ and $16 \pmod{25}$. This leads us to the conclusion that $x$ is either $0$ or $2$ modulo $4$, and either $4$ or $21$ modulo $25$. Thus, the last two digits of $x$ must be either 
+$04, 46, 54$, or $96$. Note that $1404$ is too small, and trying $1446$ yields $2090916$, giving us our desired answer of $\boxed{909}$.
 \end{solution}
 
 \end{document}
