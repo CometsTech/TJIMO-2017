@@ -120,7 +120,7 @@ Since $27 = 3^3$, the only factors are 1, 3, 9, and 27, giving us a total of $\b
 
 
 \begin{problem}
-If the radius of the larger circle is $6$, and all the smaller circles are the same size, then what is the side length of the hexagon?
+In the diagram below, if the radius of the larger circle is $6$, and all the smaller circles are the same size, then what is the side length of the hexagon?
     \begin{center}
         \begin{tikzpicture}[thick, scale=0.6]
             \draw (0, 0) circle (3cm);
@@ -158,7 +158,10 @@ Consider the following diagram.
         \end{tikzpicture}
     \end{center}
 
-Note that if we draw in the red segment (shown above), it is equal to the side-length of the hexagon. Thus, it is equal to two times the radius of a smaller circle. Also note that the radius of a smaller circle is equal to $\frac{1}{3}$ of the radius of the larger circle (see the blue line for reference). Thus, the side length of the hexagon is equal to $2 \cdot \frac{1}{3}=\frac{2}{3}$ of the larger radius, or $\frac{2}{3} \cdot 6 = \boxed{4}$.
+Note that if we draw in the horizontal segment across two radii, it is equal to the side-length of the hexagon. 
+Thus, the length of the hexagon is equal to two times the radius of a smaller circle. Also note that the radius of a smaller circle is equal to 
+$\frac{1}{3}$ of the radius of the larger circle. Thus, the side length of the hexagon is equal to 
+$2 \cdot \frac{1}{3}=\frac{2}{3}$ of the larger radius, or $\frac{2}{3} \cdot 6 = \boxed{4}$.
 \end{solution}
 
 
@@ -235,7 +238,7 @@ label("C", (2.5, 1.5), NE);
 fill((0,0)--(0,1.5)--(2.5,1.5)--(5, 0)--(0,0)--cycle,gray);
 \end{asy}
 \end{center}
-We divided the rectangle into eight congruent triangles, three of which are shaded. Thus $\dfrac{3}{8}$ of the total area is shaded, so our answer is $128 \cdot \dfrac38 = \boxed{48}.$
+We divided the rectangle into eight congruent triangles, three of which are shaded. Thus $\dfrac{3}{8}$ of the total area is shaded, so our answer is $128 \cdot \dfrac{3}{8} = \boxed{48}.$
 \end{solution}
 
 
@@ -281,7 +284,8 @@ We know that $a^2 + 7a - 16 = 0$, so $a(a+7) = a^2 + 7a = \boxed{16}$.
 
 
 \begin{problem}
-How many ways can I seat Josh, Akshaj, Jeffery, Katherine, Michael, and Wendy at a circular table so that Wendy and Katherine are sitting next to each other?
+How many ways can I seat Josh, Akshaj, Jeffery, Katherine, Michael, and Wendy at a circular table, where all seats are numbered
+and distinguishable, so that Wendy and Katherine are sitting next to each other?
 \end{problem}
 
 \begin{answer}
@@ -296,7 +300,8 @@ Let us fix Wendy and Katherine in two adjacent seats. Then, there are $4!=24$ wa
 \newpage
 \section*{Set 5}
 \begin{problem}
-For an art project, Katherine is building a model of TJ. If the real auditorium is 30 feet wide but 2 inches wide in Katherine's model, how long in inches should the model gym be if the real gym is 75 feet long?
+For an art project, Katherine is building a model of TJ. If the real auditorium is 30 feet wide, and the auditorium in Katherine's model is
+2 inches wide, how long in inches should the model gym be if the real gym is 75 feet long?
 \end{problem}
 
 \begin{answer}
@@ -323,7 +328,7 @@ In the first case, there are $4$ ways to choose which child to give the three pi
 
 
 \begin{problem}
-What is the probability that if I flip a coin 7 times in a row, I get heads at least 4 times?
+What is the probability that if I flip a coin 5 times in a row, I get heads at least 3 times?
 \end{problem}
 
 \begin{answer}
@@ -331,12 +336,17 @@ $\frac{1}{2}$
 \end{answer}
 
 \begin{solution}
-Notice that I get heads at least $4$ times if and only if I get more heads than tails. Thus, we need only find the probability that we flip more heads than tails. By symmetry, this is equal to the probability of flipping more tails than heads. Since $7$ is odd, all possible sequences of flips must result in either having more heads than tails or more tails than heads, so our desired probability is exactly $\boxed{\dfrac{1}{2}}$.
+Notice that I get heads at least $5$ times if and only if I get more heads than tails. 
+Thus, we need only find the probability that we flip more heads than tails. By symmetry, this is equal to the probability of flipping more 
+tails than heads. Since $5$ is odd, all possible sequences of flips must result in either having more heads than tails or more 
+tails than heads, so our desired probability is exactly $\boxed{\dfrac{1}{2}}$.
 \end{solution}
 
 
 \begin{problem}
-Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers for 3 dollars and evidence for 2 dollars each, how many combinations of lawyers and evidence can Gideon buy, assuming that he needs to buy a lawyer and he does not need to spend all 10 dollars? (For example, Wainwright can buy one lawyer and no evidence.)
+Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers for 3 dollars and investigators for 2 dollars each, 
+how many combinations of lawyers and investigators can Gideon hire, assuming that he needs to hire at least one lawyer and he does not 
+need to spend all 10 dollars? (For example, Gideon can hire one lawyer and no investigators.)
 \end{problem}
 
 \begin{answer}
@@ -344,14 +354,18 @@ Gideon is facing trial, but he only has 10 dollars. If Wainwright offers lawyers
 \end{answer}
 
 \begin{solution}
-Since Gideon needs to buy a lawyer, the problem is equivalent to Gideon not having to buy a lawyer and having 7 dollars total. Note that he cannot buy three or more lawyers. If he buys two additional lawyers, he cannot buy any evidence. If he buys one additional lawyer, he can buy up to two pieces of evidence, giving three possibilities. If he buys no additional lawyers, he can buy up to three pieces of evidence, yielding four possibilities. Summing this up, we have a total of $1+3+4=\boxed{8}$ combinations.
+Since Gideon needs to hire a lawyer, the problem is equivalent to Gideon not having to hire a lawyer and having 7 dollars total. 
+Note that he cannot hire three or more lawyers. If he hires two additional lawyers, he cannot hire any investigators. 
+If he hires one additional lawyer, he can hire up to two investigators, giving three possibilities. 
+If he hires no additional lawyers, he can hire up to three investigators, yielding four possibilities. 
+Summing this up, we have a total of $1+3+4=\boxed{8}$ combinations.
 \end{solution}
 
 
 \newpage
 \section*{Set 6}
 \begin{problem}
-Seven not necessarily distinct integers in the set $\{1, 2, 3, \ldots, 15\}$ have a median of $8$ and a unique mode of $9$. What is the largest possible mean of these seven integers? Express your answer as a common fraction.%Given that the median of 7 not necessarily distinct integers in the set $\{1, 2, 3, \dots 15\}$ is 8 and the distinct mode is 9, what is the largest possible mean?
+Seven integers, not necessarily different, in the set $\{1, 2, 3, \ldots, 15\}$ have a median of $8$ and a unique mode of $9$. What is the largest possible mean of these seven integers? Express your answer as a common fraction.%Given that the median of 7 not necessarily distinct integers in the set $\{1, 2, 3, \dots 15\}$ is 8 and the distinct mode is 9, what is the largest possible mean?
 \end{problem}
 
 \begin{answer}
@@ -377,30 +391,18 @@ We can write this as $x \equiv -2 (\pmod 3)$, $x \equiv -2 (\pmod 5)$, and $x \e
 
 
 \begin{problem}
-Let $ABCD$ and $EFGH$ be squares such that $E$ lies on $\overline{AB}$, $F$ lies on $\overline{BC}$, $G$ lies on $\overline{CD}$, and $H$ lies on $\overline{AD}$. If the area of $EFGH$ is $\frac{5}{9}$ of the area of $ABCD$ and $AE \geq BE$, what is $\frac{AE}{BE}$? %Should we provide the diagram on the contest?
+What is the smallest positive integer that gives a remainder of $1$ when divided by $3$, a remainder of $3$ when divided by $5$, and
+a remainder of $5$ when divided by $7$?
 \end{problem}
 
 \begin{answer}
-2
+103
 \end{answer}
 
 \begin{solution}
-Consider the following diagram.
-\begin{center}
-    \begin{tikzpicture}
-        \draw (0, 0) -- (3, 0) -- (3, 3) -- (0, 3) -- cycle;
-        \draw (1, 0) -- (3, 1) -- (2, 3) -- (0, 2) -- cycle;
-        \node at (0, 0)[below left] {A};
-        \node at (0, 3)[above left] {B};
-        \node at (3, 3)[above right] {C};
-        \node at (3, 0)[below right] {D};
-        \node at (0, 2)[left] {E};
-        \node at (2, 3)[above] {F};
-        \node at (3, 1)[right] {G};
-        \node at (1, 0)[below] {H};
-    \end{tikzpicture}
-\end{center}
-Note that if the area of $EFGH$ is $\frac{5}{9}$ of the area of $ABCD$, then the area of each of the right triangles must be $\frac{1}{9}$ of the area of $ABCD$. Thus, $(AE)(AH) = \frac{2}{9}[ABCD]=\frac{2}{9}AB^2$, where $[ABCD]$ is the area of $ABCD$. Since we know that $AE + AH = AE + BE = AB$, we see that $AE=\frac{2}{3}AB$ once we solve the system of equations. Thus, $\frac{AE}{BE} = \boxed{2}$.
+The condition is equivalent to the integer being $2$ less than a multiple of $3$, $2$ less than a multiple of $5$, and $2$ less than a multiple
+of $7$. Hence it must be $2$ less than a multiple of $\lcm{3, 5, 7} = 3 \cdot 5 \cdot 7 = 105$. The smallest positive integer satisfying
+this is $105 - 2 = \boxed{103}$.
 \end{solution}
 
 
@@ -459,19 +461,17 @@ How many triangles are in the following figure?
 \end{answer}
 
 \begin{solution}
-Consider the following diagram.
+Consider the following four types of triangles.
 \begin{center}
         \begin{tikzpicture}
-            \draw (0, 0) -- (3, 0) -- (3, 3) -- (0, 3) -- cycle;
-            \draw (1, 0) -- (3, 1) -- (2, 3) -- (0, 2) -- cycle;
-            \draw (0, 1) -- (1, 3) -- (3, 2) -- (2, 0) -- cycle;
-            \draw[color=blue] (1, 0) -- (1.5, 0.24) -- (0.67, 0.67) -- cycle;
-            \draw[color=red] (3, 0) -- (3, 2) -- (2, 0) -- cycle;
-            \draw[color=purple] (2, 3) -- (1, 3) -- (1.5, 2.76) -- cycle;
-            \draw[color=green] (0, 2) -- (0, 1) -- (0.67, 2.33) -- cycle;
+            \draw (1, 0) -- (1.5, 0.24) -- (0.67, 0.67) -- cycle;
+            \draw (3, 0) -- (3, 2) -- (2, 0) -- cycle;
+            \draw (2, 3) -- (1, 3) -- (1.5, 2.76) -- cycle;
+            \draw (0, 2) -- (0, 1) -- (0.67, 2.33) -- cycle;
         \end{tikzpicture}
     \end{center}
-There are 8 blue triangles, 8 red triangles, 4 purple triangles, and 8 green triangles, giving us a total of $\boxed{28}$ triangles.
+Starting from the top and going clockwise, there are $4$ triangles congruent to the top one, $8$ triangles congruent to the right one,
+$8$ triangles congruent to the bottom one, and $8$ triangles congruent to the left one. That gives a total of $4 + 8 + 8 + 8 = \boxed{28}$ triangles.
 \end{solution}
 
 
@@ -524,7 +524,7 @@ $\frac{29}{30}$
 \end{answer}
 
 \begin{solution}
-Note that $\frac{1}{n(n+1} = \frac{1}{n} - \frac{1}{n+1}$. Thus, the expression evaluates to $\frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + ... - \frac{1}{29} + \frac{1}{29} - \frac{1}{30} = 1-\frac{1}{30} = \boxed{\frac{29}{30}}$
+Note that $\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$. Thus, the expression evaluates to $\frac{1}{1} - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + ... - \frac{1}{29} + \frac{1}{29} - \frac{1}{30} = 1-\frac{1}{30} = \boxed{\frac{29}{30}}$
 \end{solution}
 
 
@@ -555,7 +555,8 @@ It takes Franklyn 5 minutes to finish one assignment, Katherine 30, and Will 15.
 
 
 \begin{problem}
-How many times in a day does the internal angle bisector (the bisector of the acute angle) between the hour hand and the minute hand on a clock pass through the $12$ or the $6$?
+A strange clock has minute and hour hands of the same length. Consider a vertical line $l$ drawn through the ``6" and ``12" numbers on the clock.
+How many times a day are the hour and minute hands reflections of each other through the line $l$?
 \end{problem}
 
 \begin{answer}
